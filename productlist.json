@@ -1,0 +1,74 @@
+[
+    {
+        "Name": "Stinky Tofu",
+        "Quantity": "1",
+        "Price": "5.00",
+        "Image": "pro9.jpg"
+    },
+    {
+        "Name": "Salted Egg Squid",
+        "Quantity": "1",
+        "Price": "8.00",
+        "Image": "pro10.jpg"
+    },
+    {
+        "Name": "Long Potato French Fries",
+        "Quantity": "1",
+        "Price": "9.00",
+        "Image": "pro11.jpg"
+    },
+    {
+        "Name": "Coconut Jelly",
+        "Quantity": "1",
+        "Price": "3.50",
+        "Image": "pro12.jpg"
+    },
+    {
+        "Name": "Dragon Beard Candy",
+        "Quantity": "1",
+        "Price": "4.00",
+        "Image": "pro13.jpg"
+    },
+    {
+        "Name": "Egg Tart",
+        "Quantity": "1",
+        "Price": "3.00",
+        "Image": "pro14.jpg"
+    },
+    {
+        "Name": "Mee Goreng",
+        "Quantity": "1",
+        "Price": "4.00",
+        "Image": "pro15.jpg"
+    },
+    {
+        "Name": "Char Kue Tiao",
+        "Quantity": "1",
+        "Price": "6.00",
+        "Image": "pro16.jpg"
+    },
+    {
+        "Name": "Papaya Desert",
+        "Quantity": "1",
+        "Price": "5.00",
+        "Image": "pro17.jpg"
+    },
+    {
+        "Name": "Ayam Goreng Merempah",
+        "Quantity": "1",
+        "Price": "5.00",
+        "Image": "pro18.jpg"
+    },
+    {
+        "Name": "Mushroom Soup",
+        "Quantity": "1",
+        "Price": "6.00",
+        "Image": "pro19.jpg"
+    },
+    {
+        "Name": "Fried Prawn",
+        "Quantity": "1",
+        "Price": "6.00",
+        "Image": "pro20.jpg"
+    }
+]

@@ -1,0 +1,80 @@
+
+.app-title{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.app-title p{
+    font-family: Rimouski;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+.notification{
+    display: none;
+}
+
+.notification p{
+    font-family: Rimouski;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-container{
+    background: rgb(238,221,221);
+    background: linear-gradient(171deg, rgba(238,221,221,1) 0%, rgba(171,171,219,1) 100%);
+    width: 250px;
+    height: 260px;
+    border-radius: 25px;
+    margin-bottom: 50px;   
+}
+
+.weather-icon{
+    width: 250px;
+    height: 128px;
+    cursor: pointer;
+}
+
+.weather-icon img{
+    display: block;
+    margin: 0 auto;
+}
+
+.temperature-value{
+    width: 250px;
+    height:60px;
+}
+
+.temperature-value p{
+    font-family: Rimouski;
+    padding: 0;
+    margin: 0;
+    font-size: 4em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.temperature-value span{
+    font-size: 0.5em;
+}
+
+.temperature-description p{
+    font-family: Rimouski;
+    padding: 8px;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.location p{
+    font-family: Rimouski;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 0.8em;
+}

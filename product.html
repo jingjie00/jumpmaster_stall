@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>Product Menu</title>
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Jumpmaster Stall">
+	<meta name="apple-mobile-web-app-title" content="Jumpmaster Stall">
+	<meta name="theme-color" content="#FF9800">
+	<meta name="msapplication-navbutton-color" content="#FF9800">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+	<!-- ** Plugins Needed for the Project ** -->
+	<!-- Bootstrap -->
+
+	
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+	<link rel="stylesheet" href="plugins/aos/aos.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+	<link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+	<link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+	<link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+	<link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+	<link rel="stylesheet" href="plugins/devices.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+	<script src='https://platform-api.sharethis.com/js/sharethis.js#property=5f49ccb7f73f72001282f8ed&product=sop'
+		async='async'></script>
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://smtpjs.com/v3/smtp.js">
+	</script>
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
+		#logo {
+			animation: bounce infinite;
+			animation-duration: 1s;
+		}
+
+		body {
+			font-family: sans-serif;
+		}
+
+		.scene1 {
+			width: 360px;
+			height: 500px;
+			perspective: 600px;
+		}
+
+		.card1 {
+			width: 100%;
+			height: 100%;
+			transition: transform 1s;
+			transform-style: preserve-3d;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.card1.is-flipped {
+			transform: rotateY(180deg);
+		}
+
+		.card__face {
+			position: absolute;
+			color: white;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.card__face--front {
+			background: white;
+		}
+
+		.sticky {
+
+			position: -webkit-sticky;
+			position: sticky;
+			z-index: 999999999;
+			top: 0;
+			width: 100%;
+
+		}
+
+		.card__face--back {
+			background: white;
+			transform: rotateY(180deg);
+		}
+
+		.divs {
+			padding: 10px;
+		}
+
+		.content-media--video {
+			background-color: #ddd;
+			display: block;
+			position: relative;
+			padding: 0 50% 45% 50%;
+
+		}
+
+		.content-media--video iframe {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		#featured-video {
+			transition: width .2s ease-in-out, height .2s ease-in-out, transform .38s ease-in-out;
+		}
+
+		.activeheader {
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		#featured-video.is-sticky {
+			position: fixed;
+			top: 15px;
+			right: 0;
+			bottom: 0;
+			max-width: 280px;
+			max-height: 158px;
+			width: 280px;
+			height: 158px;
+			z-index: 999999999;
+		}
+
+		.mapouter {
+			position: relative;
+			text-align: right;
+			height: 206px;
+			width: 372px;
+		}
+
+		.gmap_canvas {
+			overflow: hidden;
+			background: none !important;
+			height: 206px;
+			width: 372px;
+		}
+
+		.gmap_canvas iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<header class="navigation" id="myheader">
+	<nav class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100" id="main-nav" style="background: url('./images/bg/bg-2.jpg') 10% 10% no-repeat;
+		background-size: cover;">
+
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img id="logo" src="images/logo.png" alt="" class="img-fluid">
+			</a>
+
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation"
+				aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Info</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="about.html">About Us </a></li>
+							<li><a class="dropdown-item" href="contact.html">Contact us</a></li>
+						</ul>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="weather.html">Weather</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="past-order.html">Past Orders</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="product.html">Product</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link shopping-cart" href="cart.html">Cart</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">Reservation</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="shipping.html">Shipping</a></li>
+							<li><a class="dropdown-item" href="payment.html">Payment</a></li>
+							<li><a class="dropdown-item" href="confirmation.html">Confirmation</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+					<li><button type="button" class="btn btn-warning">
+							<a href="index.html">My detail</a>
+							
+						</button></li>
+
+
+				</ul>
+			</div>
+
+			<!-- The User detail -->
+			<div class="modal" id="myModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title">Hi customer</h4>
+
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+						</div>
+						<div id="alert">
+
+						</div>
+						<!-- Modal body -->
+						<div class="modal-body">
+							<h2 id="indicate">Mode</h2>
+							<div class="form-group">
+								<label class="control-label">Name:</label>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<div class="dropdown">
+											<button id="select_button" class="btn btn-secondary dropdown-toggle"
+												type="button">
+												Select:
+											</button>
+											<div id="name_select" class="dropdown-menu">
+
+											</div>
+										</div>
+									</div>
+									<input id="name" type="text" class="form-control">
+								</div>
+							</div>
+							<div id="valid">
+								<div class="form-group">
+									<label class="control-label">Address:</label>
+									<div class="input-group">
+										<input id="address" type="text" class="form-control">
+										<div class="input-group-append">
+											<button id="location" class="btn btn-dark">From map</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">Email:</label>
+									<input id="email" type="text" class="form-control">
+								</div>
+								<button id="clearsession" type="button" class="btn btn-warning">Clear my session
+								</button>
+								<button id="selectsession" type="button" class="btn btn-success">Select session
+								</button>
+							</div>
+						</div>
+
+						<!-- Modal footer -->
+						<div class="modal-footer">
+
+							<button id="add" type="button" class="btn btn-primary">Add
+							</button>
+							<button id="edit" type="button" class="btn btn-secondary">Edit
+							</button>
+							<button id="remove" type="button" class="btn btn-danger">Remove
+							</button>
+							<button id="back" type="button" class="btn btn-danger">Back
+							</button>
+							<button id="save" type="button" class="btn btn-success">Done
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Header Close -->
+</header>
+
+
+
+<!-- The Carrot GIF When the Page Loads -->
+
+<div class="preloader">
+	<img src="images/preloader.gif" alt="preloader" class="img-fluid">
+</div>
+
+<!-- Our Products + Youtube Video Section -->
+<section class="section-header bg-1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="text-center">
+					<h1 class="text-capitalize mb-4 font-lg text-white">Our Products</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-content">
+
+		<div class="container">
+			<header class="content-header">
+				<figure class="content-media content-media--video" id="featured-media"><iframe
+						class="content-media__object" id="featured-video"
+						src="https://www.youtube.com/embed/rqni_J6QVdk?enablejsapi=1&amp;rel=0&amp;showinfo=0&amp;controls=1"
+						frameborder="0" allowfullscreen></iframe></figure>
+			</header>
+
+		</div>
+	</div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="plugins/jQuery/product.js"></script>
+
+<!-- LiveUpdate Google Chart Section  -->
+<section style="background-color:azure; align-content: center;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="text-center">
+					<h3 class="text-capitalize mb-4 font-lg">Number Of Products Added
+						to Cart</h3>
+					<span class="text-primary font-extra font-md">#LiveUpdate4Ever</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-content">
+
+		<div class="container">
+			<header class="content-header">
+				<div class="container" id="chart" style="width:100%; height:500px; ">
+				</div>
+			</header>
+
+		</div>
+	</div>
+</section>
+
+
+
+<!-- Top 6 Products With CSS 3D Tranform (Flipping) -->
+<section class="section menu-3 secondary-bg" id="afterme">
+	<div class="container toscroll">
+		<div class="row  justify-content-center mb-5 image">
+			<div class="col-lg-8 text-center">
+				<span class="text-primary font-extra font-md">Most Popular</span>
+				<h2 class="mt-3 mb-4">Click on your favourite to see what other people think!</h2>
+
+
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="scene1 scene--card divs">
+				<div class="card1">
+					<div class="card__face card__face--front">
+
+						<div data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3 item">
+								<img src=".\images\products/pro9.jpg" alt="" class="img-fluid" id="findme0">
+
+								<div class="card-body shop-item">
+									<h3 class="card-title shop-item-title">Stinky Tofu <span class="text-primary">-
+											RM<span class="shop-item-price">5.00</span></span>
+									</h3>
+									<p>Fried fermented been curd. Indulge in this Chinese traditional snack
+										originating from the Ming Dynasty. Served with a side of cabbage pickle </p>
+
+									<a class="btn btn-main mt-2 shop-item-button" onclick="addItemInCart(0)">Add to
+										Cart</a>
+
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					<div class="card__face card__face--back">
+
+						<div class="" data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/fivestar.jpg" alt="" class="img-fluid">
+
+
+								<div class="card-body">
+									<h3 class="card-title"> Simply Scrumptious!</h3>
+									<p>"The food was fresh, properly prepared and a great value for the price. We
+										highly recommend it." - MaryK </p>
+									<p>"Yummers! After my meal, I was knocked into a food coma. I'd give more than 5
+										stars if I could!" - Jones24</p>
+									<p>"Everything I tried was bursting with flavor. I especially loved the cabbage
+										pickles paired with the tofu. I'm definitely coming back for
+										more next time!!!" - jctmq25</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="scene1 scene--card divs">
+				<div class="card1">
+					<div class="card__face card__face--front">
+
+						<div data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/pro10.jpg" alt="" class="img-fluid" id="findme1">
+
+								<div class="card-body">
+									<h3 class="card-title">Salted Egg Squid - <span class="text-primary">RM8.00</span>
+									</h3>
+									<p>The perfect union of deep fried seafood and creamy salted egg sauce. A food
+										marriage made in heaven! </p>
+									<a class="btn btn-main mt-2 shop-item-button" onclick="addItemInCart(1)">Add to
+										Cart</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="card__face card__face--back">
+
+						<div class="" data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/fivestar.jpg" alt="" class="img-fluid">
+
+
+								<div class="card-body">
+									<h3 class="card-title"> ~ Salted Egg Heaven ~</h3>
+									<p>"Oh my God! So good! Everything I tried was bursting with flavor. Try out the
+										huge selection of incredible appetizers. After my meal, I was knocked into a
+										food coma. Everything was just so yummy. They got a new customer for life!"
+										- Ali123 </p>
+									<p>"Best of the best. Five stars! Never gonna eat from another stall ever
+										again." - Genie</p>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="scene1 scene--card divs">
+				<div class="card1">
+					<div class="card__face card__face--front">
+
+						<div data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/pro11.jpg" alt="" class="img-fluid" id="findme2">
+
+								<div class="card-body">
+									<h3 class="card-title">Long Potato French Fries - <span
+											class="text-primary">RM9.00</span>
+									</h3>
+									<p>Flavours: Cheese, Ranch, Mustard, Seaweed, Honey and MSG</p>
+									<a class="btn btn-main mt-2 shop-item-button" onclick="addItemInCart(2)">Add to
+										Cart</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="card__face card__face--back">
+
+						<div class="" data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/fivestar.jpg" alt="" class="img-fluid">
+
+
+								<div class="card-body">
+									<h3 class="card-title">Better Than MCDonald's XD</h3>
+									<p>"I stumbled upon this undiscovered gem while looking for a snack to soothe my
+										crying kids. Those kids immediately turned to angels once they saw me with
+										the 20cm french fries!"
+										- Matthew </p>
+									<p>"I was spoiled for choice! There were so many flavours to choose from!" -
+										Erza</p>
+									<p>"My friend treated me to one of these heavenly sticks. Never went back to
+										McDonld's since then!" - Miya</p>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="scene1 scene--card divs">
+				<div class="card1">
+					<div class="card__face card__face--front">
+
+						<div data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/pro12.jpg" alt="" class="img-fluid" id="findme3">
+
+								<div class="card-body">
+									<h3 class="card-title">Coconut Jelly - <span class="text-primary">RM3.50</span>
+									</h3>
+									<p>A modern take on the classical coconut jelly. Our double-layered jellies are
+										sweet and cooling, with a hint of pandan-infused flavour</p>
+									<a class="btn btn-main mt-2 shop-item-button" onclick="addItemInCart(3)">Add to
+										Cart</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="card__face card__face--back">
+
+						<div class="" data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/fivestar.jpg" alt="" class="img-fluid">
+
+
+								<div class="card-body">
+									<h3 class="card-title"> Refreshing, Relieving, Recharging</h3>
+									<p>"Heavenly. Simply, heavenly. The jelly melts in your mouth, and you get that
+										burst of refreshing coconut flavour, followed by a mild pandan taste. The
+										jelly arrived at my doorstep chilled, too. Perfect on a hot day."
+										- Bert</p>
+									<p>"Even better than the original! I felt like I went to heaven, said 'hi' to
+										the angels and came back down to earth, all in one BITE!" - Ernie</p>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="scene1 scene--card divs">
+				<div class="card1">
+					<div class="card__face card__face--front">
+
+						<div data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/pro13.jpg" alt="" class="img-fluid" id="findme4">
+
+								<div class="card-body">
+									<h3 class="card-title">Dragon Beard Candy - <span class="text-primary">RM4.00</span>
+									</h3>
+									<p>Handmade white-threaded candy with a sweet nutty filling</p>
+									<a class="btn btn-main mt-2 shop-item-button" onclick="addItemInCart(4)">Add to
+										Cart</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="card__face card__face--back">
+
+						<div class="" data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/fivestar.jpg" alt="" class="img-fluid">
+
+
+								<div class="card-body">
+									<h3 class="card-title"> Re-living Chinese Traditions</h3>
+									<p>"After looking far and wide, I finally found one that tastes like how my
+										great-grandma made it. You'll never find such great tasting candies
+										elsewhere!"
+										- Jeus </p>
+									<p>"A tad on the sweet side for me. But my kids love the stringy texture of the
+										candies! My order came with a packet of extra nuts in case we didnt have
+										enough. Great seller. Top-notch service!" - Coco</p>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="scene1 scene--card divs">
+				<div class="card1">
+					<div class="card__face card__face--front">
+
+						<div data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/pro14.jpg" alt="" class="img-fluid" id="findme5">
+
+								<div class="card-body">
+									<h3 class="card-title">Egg Tart - <span class="text-primary">RM3.00</span></h3>
+									<p>Malaysia's take on a creme brulee. Crispy on the outside, creamy on the
+										inside. Made with ingredients fresh from the farm.</p>
+									<a class="btn btn-main mt-2 shop-item-button" onclick="addItemInCart(5)">Add to
+										Cart</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="card__face card__face--back">
+
+						<div class="" data-aos="fade-up" data-aos-delay="0">
+							<div class="card border-0 menu-item3">
+								<img src=".\images\products/fivestar.jpg" alt="" class="img-fluid">
+
+
+								<div class="card-body">
+									<h3 class="card-title"> Classical Favourite</h3>
+									<p>"I've never tasted quite an egg tart like this. Words simply cannot describe
+										how wonderful this is! You just have to try it for yourselves!"
+										- Danny </p>
+									<p>"Life just ain't complete without one of these egg tarts." - Sam</p>
+									<p>"The pielike crust was slightly salty and added a nice kick to the egg tart.
+										The custard part of the tart was soft and warm. An absolute delight to have
+										on family night!" - Tucker</p>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+</section>
+
+<!-- The other 6 items on our menu with their respective categories -->
+<section class="section menu" style="background-color:azure">
+	<div class="container">
+		<div class="row  justify-content-center mb-5">
+			<div class="col-lg-8 text-center">
+				<span class="text-primary font-extra font-md">All Time Delights</span>
+				<h2 class="mt-3 mb-4">Try out our timeless Malaysia cuisines</h2>
+			</div>
+		</div>
+		<div class="col-12 text-center mb-5">
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn active">
+					<input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+				</label>
+				<label class="btn">
+					<input type="radio" name="shuffle-filter" value="main" />Savoury Meals
+				</label>
+				<label class="btn">
+					<input type="radio" name="shuffle-filter" value="dessert" />Desserts and Sides
+				</label>
+				<label class="btn">
+					<input type="radio" name="shuffle-filter" value="alacarte" />A La Carte
+				</label>
+			</div>
+		</div>
+
+
+		<div class="row shuffle-wrapper food-gallery">
+
+			<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;main&quot;,&quot;alacarte&quot;]">
+				<div class="menu-item position-relative ">
+					<div class="d-flex align-items-center">
+						<img src="images/products/pro15.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme6">
+						<div>
+							<h4>Mee Goreng <span>RM 4</span></h4>
+							<p>Mamak-style fried noodles with prawns and chicken </p>
+							<div class="mb-4">
+								<a href="javascript:void(0);" class="mt-2 shop-item-button"
+									onclick="addItemInCart(6)"><i class="ti-shopping-cart mr-2 text-primary"></i>Add
+									to cart</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;main&quot;]">
+				<div class="menu-item position-relative ">
+					<div class="d-flex align-items-center">
+						<img src="images/products/pro16.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme7">
+						<div>
+							<h4>Char Kue Tiao - <span>RM 6</span></h4>
+							<p>Chinese version of Mee Goreng</p>
+							<a href="javascript:void(0);" class="mt-2 shop-item-button" onclick="addItemInCart(7)"><i
+									class="ti-shopping-cart mr-2 text-primary"></i>Add to
+								cart</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;alacarte&quot;]">
+				<div class="menu-item position-relative ">
+					<div class="d-flex align-items-center">
+						<img src="images/products/pro18.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme8">
+						<div>
+							<h4>Ayam Goreng Merempah- <span>RM 5</span></h4>
+							<p>Crispy fried chicken with spice and herb batter</p>
+							<a href="javascript:void(0);" class="mt-2 shop-item-button" onclick="addItemInCart(8)"><i
+									class="ti-shopping-cart mr-2 text-primary"></i>Add to
+								cart</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;dessert&quot;]">
+				<div class="menu-item position-relative ">
+					<div class="d-flex align-items-center">
+						<img src="images/products/pro17.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme9">
+						<div>
+							<h4>Papaya Dessert - <span>RM 5</span></h4>
+							<p>Papaya sweet soup boiled with snow fungus and peach gum</p>
+							<a href="javascript:void(0);" class="mt-2 shop-item-button" onclick="addItemInCart(9)"><i
+									class="ti-shopping-cart mr-2 text-primary"></i>Add to
+								cart</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;alacarte&quot;,&quot;dessert&quot;]">
+				<div class="menu-item position-relative ">
+					<div class="d-flex align-items-center">
+						<img src="images/products/pro19.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme10">
+						<div>
+							<h4>Mushroom Soup - <span>RM 6</span></h4>
+							<p>The perfect blend of heavy cream and fresh, handpicked mushrooms</p>
+							<a href="javascript:void(0);" class="mt-2 shop-item-button" onclick="addItemInCart(10)"><i
+									class="ti-shopping-cart mr-2 text-primary"></i>Add to
+								cart</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;alacarte&quot;]">
+				<div class="menu-item position-relative ">
+					<div class="d-flex align-items-center">
+						<img src="images/products/pro20.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme11">
+						<div>
+							<h4>Fried Prawn - <span>RM 6</span></h4>
+							<p>Crispy fried prawns with a side of tangy mayo</p>
+							<a href="javascript:void(0);" class="mt-2 shop-item-button" onclick="addItemInCart(11)"><i
+									class="ti-shopping-cart mr-2 text-primary"></i>Add to
+								cart</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="secondary-bg">
+	<div class="container-fluid" style="text-align: center; padding:10px;">
+		<h3>Take a Sneak Peak At Our Upcoming Products!</h3>
+		<a class="btn btn-main mt-2 shop-item-button" href="upcoming.html" target="_blank"
+			rel="noopener noreferrer">Click Me</a>
+	</div>
+</section>
+
+<!--Footer start -->
+<footer class="section footer">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">About</h4>
+					<p>JumpMasters hopes to bring you the better best of Malaysia's cusines. Indulge in your
+						favourite delights delivered to your doorstep steaming hot! We offer the best prices for
+						Malaysia's best night market foods.</p>
+
+					<ul class="list-inline footer-socials mt-4">
+						<li class="list-inline-item"><a href="https://www.facebook.com"><i
+									class="ti-facebook mr-2"></i></a></li>
+						<li class="list-inline-item"><a href="https://wa.link/ybfh21"><i
+									class="ti-themify-favicon-alt mr-2"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">Contact Info</h4>
+
+					<ul class="list-unstyled mb-0 footer-contact">
+						<li><i class="ti-mobile"></i><a class="text-light" href="https://wa.link/ybfh21">+60 11-3810
+								0852</a></li>
+						<li><i class="ti-email"></i><a class="text-light"
+								href="mailto:jumpmasterweb@gmail.com">jumpmasterweb@gmail.com</a></li>
+						<li class="text-light"><i class="ti-map"></i>Kampar, Perak Malaysia</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">Opening Hours</h4>
+					<div class="info mb-4">
+						<p class="mb-0">Monday - Sunday</p>
+						<h5>05:00 PM - 11:00 PM</h5>
+					</div>
+					<div class="info">
+						<p class="mb-0">Physical Stall, Every Wednesday</p>
+						<h5>05:00 PM - 11:00 PM</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Google Map Integration -->
+			<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+				<span class="text-primary font-md font-extra">Location</span>
+				<div class="gmap_canvas"><iframe width="372" height="206"
+						src="https://maps.google.com/maps?q=Grand%20kampar%20Hotel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+						frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+						href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a></div>
+			</div>
+			<!-- Google Map Integration End-->
+
+			<div class="col-lg-8 col-md-9 mb-5 mb-lg-0">
+				<div class="col-lg-12 text-center">
+					<br><br>
+					<span class="text-primary font-md font-extra">Get news from Jumpmaster!</span>
+					<h4 class="mb-3" style="color:white;">Fill me</h4>
+					<div class="form-group">
+						<input id="sendemail" type="email" class="form-control" placeholder="Enter Email" required>
+						<button id="emailsubmit" class="btn btn-dark">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+<section class="footer-btm py-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
+					<p class="mb-0 ">Copyright &copy; 2020 by <a href="index.html" class="text-white">Jumpmaster
+							Night Market</a></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Footer  End -->
+
+
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/aos/aos.js"></script>
+<script src="plugins/shuffle/shuffle.min.js"></script>
+<script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="plugins/date-picker/datepicker.min.js"></script>
+<script src="plugins/clock-picker/clockpicker.min.js"></script>
+<script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+<script src="plugins/swiper/swiper.min.js"></script>
+<script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<!-- Main Script -->
+
+<script src="js/script.js"></script>
+<script src="js/main.js"></script>
+<script src="js/user.js"></script>
+
+
+<!-- My Scripts -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="plugins/jQuery/product.js"></script>
+
+
+<div id="UMS_TOOLTIP"
+	style="position: absolute; cursor: pointer; z-index: 2147483647; background: transparent; top: -100000px; left: -100000px;">
+</div>
+<script>
+
+	// Register Service Worker
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function () {
+			navigator.serviceWorker.register('service-worker.js')
+				.then(reg => {
+					console.log('Service worker registered! 😎', reg);
+				})
+				.catch(err => {
+					console.log('😥 Service worker registration failed: ', err);
+				});
+		});
+	}
+</script>
+
+</body>
+
+<script>
+
+
+	// Implement sticky header when user scrolls past header at the top
+	window.onscroll = function () { myFunction1() };
+
+	var header = document.getElementById("myheader");
+	var sticky = header.offsetTop;
+
+	function myFunction1() {
+		if (window.pageYOffset > sticky) {
+			header.classList.add("sticky");
+
+
+		} else {
+			header.classList.remove("sticky");
+
+
+
+		}
+	}
+
+	// Implement the flipping animation whenever the top 6 food items are clicked
+	var card = document.querySelectorAll('.card1');
+	card.forEach(function (e1) {
+		e1.addEventListener('click', function (event) {
+			e1.classList.toggle('is-flipped');
+		});
+	});
+
+	//Declaring global variables to keep track of the full product list and addCartCount for the Google Charts
+	var myObj = [];
+	var addCartCount = 0;
+	var KeepCount = [];
+	var d = new Date();
+	var n = d.getMonth();
+
+	//When the window has finish loading, do these
+	$(window).ready(function () {
+
+		//Check if a response can be obtained from the server. If yes, 200 will be returned. If no, 404 will be returned
+		function fetchStatusHandler(response) {
+			if (response.status === 200) {
+				return response;
+			} else {
+				throw new Error(response.statusText);
+			}
+		}
+
+		// Fetch the product list REST API from mockable.io
+		fetch("https://demo9660493.mockable.io/products")
+			.then(
+				fetchStatusHandler
+			).then(function () {
+				function getArray() {
+					return $.getJSON('https://demo9660493.mockable.io/products');
+				}
+
+				getArray().done(function (json) {
+					// now you can use json
+					myObj = json;
+
+
+				});
+
+				//If the API is down, use a backup file instead (for offline purposes)
+			}).catch(function () {
+				console.log("Website not found, Using backup instead...");
+				myObj = [{ "Name": "Stinky Tofu", "Quantity": "1", "Price": "5.00", "Image": "pro9.jpg" }, { "Name": "Salted Egg Squid", "Quantity": "1", "Price": "8.00", "Image": "pro10.jpg" }, { "Name": "Long Potato French Fries", "Quantity": "1", "Price": "9.00", "Image": "pro11.jpg" }, { "Name": "Coconut Jelly", "Quantity": "1", "Price": "3.50", "Image": "pro12.jpg" }, { "Name": "Dragon Beard Candy", "Quantity": "1", "Price": "4.00", "Image": "pro13.jpg" }, { "Name": "Egg Tart", "Quantity": "1", "Price": "3.00", "Image": "pro14.jpg" }, { "Name": "Mee Goreng", "Quantity": "1", "Price": "4.00", "Image": "pro15.jpg" }, { "Name": "Char Kue Tiao", "Quantity": "1", "Price": "6.00", "Image": "pro16.jpg" }, { "Name": "Papaya Desert", "Quantity": "1", "Price": "5.00", "Image": "pro17.jpg" }, { "Name": "Ayam Goreng Merempah", "Quantity": "1", "Price": "5.00", "Image": "pro18.jpg" }, { "Name": "Mushroom Soup", "Quantity": "1", "Price": "6.00", "Image": "pro19.jpg" }, { "Name": "Fried Prawn", "Quantity": "1", "Price": "6.00", "Image": "pro20.jpg" }];
+			});
+
+
+		//Initialise Google Charts upon page load
+		google.charts.load('visualization', { packages: ['corechart'] });
+		google.charts.setOnLoadCallback(drawLineChart);
+		var datas;
+
+		//Initialise shopping cart using self-defined function
+		cart_initCart();
+
+		var addToCartButtons = document.getElementsByClassName('shop-item-button')
+
+		var i = 0;
+
+		//Delete any null items found in the cart
+		cartObj = cartObj.filter(function (x) { return x !== null });
+	});
+
+	//function to get data from LocalStorage
+	function getLocalData(name) {
+		return localStorage.getItem(name)
+	}
+
+	//function to set data into LocalStorage
+	function setLocalData(name, value) {
+		if (value != null)
+			localStorage.setItem(name, value);
+		else
+			localStorage.removeItem(name);
+	}
+
+	var cartObj = null; // global pointer to cart
+	var cart = -1; //Indicates that the cart is empty
+
+
+	//function to update the Google Chart
+	function drawLineChart() {
+
+		//Get the addCartCount from LocalStorage
+		if (Storage !== "undefined") {
+			datas = JSON.parse(getLocalData("KEEPCOUNT"));
+
+			//If such file does not exist in the LocalStorage, it means that the user is accessing the page for the first time,
+			// So we will get the pre-loaded data from mockable.io API
+			if (datas === "undefined" || datas === null || datas.length == 0) {
+
+				//Use AJAX method to get data from the API
+				$.ajax({
+					url: "https://demo9660493.mockable.io/keepcount",
+					dataType: "json",
+					type: "GET",
+					contentType: "text/json; charset=utf-8",
+					//If data is retreived successfully, then...
+					success: function (data) {
+
+						var arrSales = [["Month", "Add-to-Carts"]];    // Define an array and assign columns for the chart.
+						// Loop through each data and populate the array.
+						$.each(data, function (index, value) {
+							arrSales.push([value.Month, parseFloat(value.Count)]);
+						});
+
+						var options = {
+							curveType: 'function',
+							'backgroundColor': 'transparent', // no background colour
+							legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 20 } }  // You can position the legend on 'top' or at the 'bottom'.
+						};
+
+						// Create DataTable and add the array to it.
+
+						var figures = google.visualization.arrayToDataTable(arrSales)
+
+						// Define the chart type (LineChart) and the container (a DIV in our case).
+						var chart = new google.visualization.LineChart(document.getElementById('chart'));
+						chart.draw(figures, options);      // Draw the chart with Options.
+
+						// Keep the data into the LocalStorage upon first retrieval
+						setLocalData("KEEPCOUNT", JSON.stringify(data));
+						KeepCount = JSON.parse(getLocalData("KEEPCOUNT"));
+
+					},
+					//Initialise a backup file if mockable.io API website is down
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						console.log("Website not found, Using backup instead...");
+						KeepCount = [
+							{
+								"Month": "Jan",
+								"Count": "10",
+								"Notify": "50"
+
+							},
+							{
+								"Month": "Feb",
+								"Count": "20",
+								"Notify": "55"
+
+							}, {
+								"Month": "Mar",
+								"Count": "30",
+								"Notify": "60"
+
+							}, {
+								"Month": "Apr",
+								"Count": "40",
+								"Notify": "70"
+
+							}, {
+								"Month": "May",
+								"Count": "30",
+								"Notify": "65"
+
+							}, {
+								"Month": "Jun",
+								"Count": "25",
+								"Notify": "25"
+
+							}, {
+								"Month": "Jul",
+								"Count": "55",
+								"Notify": "45"
+
+							}, {
+								"Month": "Aug",
+								"Count": "70",
+								"Notify": "77"
+
+							}, {
+								"Month": "Sep",
+								"Count": "0",
+								"Notify": "0"
+
+							}, {
+								"Month": "Oct",
+								"Count": "0",
+								"Notify": "0"
+
+							},
+							{
+								"Month": "Nov",
+								"Count": "0",
+								"Notify": "0"
+
+
+							},
+
+							{
+								"Month": "Dec",
+								"Count": "0",
+								"Notify": "0"
+
+							}
+
+						]
+					}
+				});
+				// The code below will take place if the file is found in the LocalStorage
+			} else {
+
+				var arrSales = [["Month", "Add-to-Carts"]];    // Define an array and assign columns for the chart.
+				datas = JSON.parse(getLocalData("KEEPCOUNT"));
+				// Loop through each data and populate the array.
+				$.each(datas, function (index, value) {
+					arrSales.push([value.Month, parseFloat(value.Count)]);
+				});
+
+				var options = {
+					curveType: 'function',
+					'backgroundColor': 'transparent', // no background colour
+					legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 20 } }  // You can position the legend on 'top' or at the 'bottom'.
+				};
+
+				// Create DataTable and add the array to it.
+
+				var figures = google.visualization.arrayToDataTable(arrSales)
+
+				// Define the chart type (LineChart) and the container (a DIV in our case).
+				var chart = new google.visualization.LineChart(document.getElementById('chart'));
+				chart.draw(figures, options);      // Draw the chart with Options.
+			}
+
+		}
+
+	}
+
+	// function to initialise cart with 0 objects in an Object array
+	function cart_initCart() {
+		cartObj = new Array();
+		cart = 0;
+
+
+		// Check in browser memory if there are a saved cart
+		if (getLocalData("NETSELL5_USERCART") != null) {
+			// if previoys cart is present load it
+			cart = getLocalData("NETSELL5_USERCART_CI");
+			cartObj = JSON.parse(getLocalData("NETSELL5_USERCART"));
+
+		}
+		else {
+			console.log("\tCart is empty!");
+		}
+
+		KeepCount = JSON.parse(getLocalData("KEEPCOUNT"));
+		addCartCount = parseInt(KeepCount[n].Count);
+
+
+
+	}
+
+	//add products
+	function addItemInCart(number) {
+		var flag = false; // flag keeps track whether this object is already added into cart or not
+		var targetindex = 0; // this variable keeps track of the objects's index in the full list of products
+
+		// Search the entire cart array to see if the product to be added already exists
+		for (var i = 0; i < cartObj.length; i++) {
+
+			//If the product already exixts in cart, raise the flag and save the targetIndex
+			if (cartObj[i].PRONAME == myObj[number].Name) {
+				flag = true;
+				targetindex = i;
+			}
+		}
+		//If this product has not been added to cart yet, the flag will be false. Then, a new object will be created to be added to the cart array
+		if (flag == false) {
+			var item = myObj[number];
+			// make new row
+			var newRow = new Object();
+
+			newRow["PRONAME"] = myObj[number].Name;
+			newRow["QTORD"] = myObj[number].Quantity;
+			newRow["PRICE"] = myObj[number].Price;
+			newRow["IMGSRC"] = myObj[number].Image;
+
+
+			// add new item to cart
+			cartObj[cart++] = newRow;
+
+
+		}
+		else {
+			// If the product already exists in cart, just increase its quantity by 1
+			cartObj[targetindex].QTORD = parseInt(cartObj[targetindex].QTORD) + 1;
+
+		}
+
+		//When the AddToCart button is clicked, make sure the top 6 products do not flip as there is no need to reveal the customer reviews
+		var card = document.querySelectorAll('.card1');
+		if (card[number] != null) {
+			card[number].classList.toggle('is-flipped');
+		}
+
+
+		//save cart and in localStorage and increase addCartCount by 1
+		setLocalData("NETSELL5_USERCART", JSON.stringify(cartObj));
+		setLocalData("NETSELL5_USERCART_CI", cart);
+		addCartCount = addCartCount + 1;
+		KeepCount[n].Count = addCartCount;
+		setLocalData("KEEPCOUNT", JSON.stringify(KeepCount));
+
+		var cart1;
+
+		//If the window screen is small, make the products fly to the Three Horizontal Lines icon. 
+		// Else, make the products fly to the word "Cart"
+		if ($(window).width() >= 982) {
+			cart1 = $('.shopping-cart');
+		}
+		else {
+			cart1 = $('.navbar-toggler.collapsed');
+
+		}
+
+
+		// Make a clone of the image clicked and animate it to fly to the "Cart"
+		var imgtodrag = $("#findme" + number);
+		if (imgtodrag) {
+			if (number <= 5) {
+				var imgclone = imgtodrag.clone()
+					.offset({
+						top: imgtodrag.offset().top,
+						left: imgtodrag.offset().left
+					})
+					.css({
+						'opacity': '0.8',
+						'position': 'absolute',
+						'height': '226.52px',
+						'width': '340px',
+						'z-index': '999999999'
+					})
+					.appendTo($('body'))
+					.animate({
+						'top': cart1.offset().top + 10,
+						'left': cart1.offset().left + 10,
+						'width': 75,
+						'height': 75
+					}, 1000, 'easeInOutExpo');
+
+
+				imgclone.animate({
+					'width': 0,
+					'height': 0
+				}, function () {
+					$(this).detach()
+				});
+			}
+			else {
+				var imgclone = imgtodrag.clone()
+					.offset({
+						top: imgtodrag.offset().top,
+						left: imgtodrag.offset().left
+					})
+					.css({
+						'opacity': '0.8',
+						'position': 'absolute',
+						'height': '83px',
+						'width': '150px',
+						'z-index': '999999999' //The flying image will be on top of the rest of the elements (So it can fly above the header)
+					})
+					.appendTo($('body'))
+					.animate({
+						'top': cart1.offset().top + 10,
+						'left': cart1.offset().left + 10,
+						'width': 75,
+						'height': 75
+					}, 1000, 'easeInOutExpo');
+
+
+				imgclone.animate({
+					'width': 0,
+					'height': 0
+				}, function () {
+					$(this).detach()
+				});
+			}
+
+		}
+
+
+		drawLineChart(); // Every time a product is added to cart, update the Google Charts
+
+	}
+
+	//getting num items in cart
+	function cart_getItemsNum_v2() {
+
+		var itemInCart = 0;
+		for (var xr in cartObj) {
+			// i need index of element in this routine so i didn't used OF in iteration
+			r = cartObj[xr];
+			if (r == null) continue; // Removed ROW - ignore it
+			itemInCart++;
+		}
+		return itemInCart;
+	}
+
+	function cart_getValue_v2() {
+
+		var useVAT = true;
+
+		var kvalueVLMERE = 0.0; // without Service Tax
+		var kvalueVLMERE_I = 0.0; // with Service Tax
+		var kvalueALIVA_VAL = 0.0; // Service Tax Only
+
+		for (var r of cartObj) // iterate all the items
+		{
+			if (r == null) continue; // Removed ROW - ignore it
+
+			var price = parseFloat(r["PRICE"]);
+			var aliva = 6.00;
+			var qtord = parseFloat(r["QTORD"]);
+
+			var totRowWithVAT = (price + ((price * aliva) / 100)) * qtord;
+			var totRowNOVAT = price * qtord;
+			var totRowALIVA = ((price * aliva) / 100) * qtord;
+
+			kvalueVLMERE = kvalueVLMERE + totRowNOVAT;
+			kvalueVLMERE_I = kvalueVLMERE_I + totRowWithVAT;
+			kvalueALIVA_VAL = kvalueALIVA_VAL + totRowALIVA;
+		}
+
+		var cartValueObj = new Object();
+		cartValueObj["VLMERE"] = kvalueVLMERE;
+		cartValueObj["VLMERE_I"] = kvalueVLMERE_I;
+		cartValueObj["ALIVA_VAL"] = kvalueALIVA_VAL;
+
+		// Return the three totals as an object array
+		return cartValueObj;
+	}
+
+	$(window).resize(function () {
+		drawLineChart();
+
+	});
+</script>
+
+
+</html>

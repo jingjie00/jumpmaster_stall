@@ -1,0 +1,20 @@
+{
+    "name": "Jumpmaster Web",
+    "short_name": "Jumpmaster Stall",
+    "lang": "en-US",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "theme_color": "#FF9800",
+    "background_color": "#FF9800",
+    "icons": [
+      {
+        "src": "images/touch/icon-128x128.png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "images/touch/icon-192x192.png",
+        "sizes": "192x192"
+      }
+    ]
+  }
+  

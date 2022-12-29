@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Payment</title>
+
+	<link rel="manifest" href="manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Jumpmaster Stall">
+	<meta name="apple-mobile-web-app-title" content="Jumpmaster Stall">
+	<meta name="theme-color" content="#FF9800">
+	<meta name="msapplication-navbutton-color" content="#FF9800">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+	<!-- ** Plugins Needed for the Project ** -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+	<link rel="stylesheet" href="plugins/aos/aos.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+	<link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+	<link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+	<link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+	<link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+	<link rel="stylesheet" href="plugins/devices.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+	<style>
+		.btn3d {
+			transition: all .08s linear;
+			position: relative;
+			outline: medium none;
+			border: 0px;
+			margin-right: 10px;
+			margin-top: 15px;
+		}
+
+		.btn3d:focus {
+			outline: medium none;
+		}
+
+		.btn3d:active {
+			top: 9px;
+		}
+
+		.btn-submit {
+			box-shadow: 0 0 0 1px #c63702 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #C24032, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+			background-color: #c63702;
+		}
+
+		.btn-info {
+			box-shadow: 0 0 0 1px #5bc0de inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #46b8da, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+			background-color: #5bc0de;
+		}
+
+		.scene1 {
+			width: 400px;
+			height: 200px;
+			perspective: 600px;
+		}
+
+		.flex {
+			width: 100%;
+			height: 100%;
+			transition: transform 1s;
+			transform-style: preserve-3d;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.flex.is-flipped {
+			transform: rotateY(180deg);
+		}
+
+		.card__face {
+			position: absolute;
+			color: white;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.card__face--front {
+			background: white;
+		}
+
+		.card__face--back {
+			background: white;
+			transform: rotateY(180deg);
+		}
+
+		.forms-studio {
+			position: relative;
+			overflow: hidden;
+			width: 600px;
+			height: 500px;
+		}
+
+		.forms-studio iframe {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="images/preloader.gif" alt="preloader" class="img-fluid">
+	</div>
+	<!-- Header Start -->
+	<!-- Nav Bar-->
+	<header class="navigation fixed-top">
+
+		<nav id="navbar" class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100 "
+			style="background: url('./images/bg/bg-2.jpg') 10% 10% no-repeat;position: fixed;top: 0;width: 100%;transition: top 0.3s;z-index: -99;">
+			<div class="container">
+				<a id="logo" class="navbar-brand" style="float:inline-start;z-index: 100;height:auto;"
+					href="index.html">
+					<img src="images/logo.png" alt="" class="img-fluid">
+				</a>
+
+				<button class="navbar-toggler collapsed ml-auto float-xs-right" type="button" data-toggle="collapse"
+					data-target="#navigation" aria-controls="navigation" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class=" fa fa-bars"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navigation">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Info</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="about.html">About Us </a></li>
+								<li><a class="dropdown-item" href="contact.html">Contact us</a></li>
+							</ul>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="weather.html">Weather</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="past-order.html">Past Orders</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="product.html">Product</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="cart.html">Cart</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Reservation</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="shipping.html">Shipping</a></li>
+								<li><a class="dropdown-item" href="payment.html">Payment</a></li>
+								<li><a class="dropdown-item" href="confirmation.html">Confirmation</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li><button id="detail" type="button" class="btn btn-warning" data-toggle="modal"
+								data-target="#myModal">
+								My detail
+							</button></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- The User detail -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Hi customer</h4>
+
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+				</div>
+				<div id="alert">
+
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<h2 id="indicate">Mode</h2>
+					<div class="form-group">
+						<label class="control-label">Name:</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<div class="dropdown">
+									<button id="select_button" class="btn btn-secondary dropdown-toggle" type="button">
+										Select:
+									</button>
+									<div id="name_select" class="dropdown-menu">
+
+									</div>
+								</div>
+							</div>
+							<input id="name" type="text" class="form-control">
+						</div>
+					</div>
+					<div id="valid">
+						<div class="form-group">
+							<label class="control-label">Address:</label>
+							<div class="input-group">
+								<input id="address" type="text" class="form-control">
+								<div class="input-group-append">
+									<button id="location" class="btn btn-dark">From map</button>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Email:</label>
+							<input id="email" type="text" class="form-control">
+						</div>
+						<button id="clearsession" type="button" class="btn btn-warning">Clear my session
+						</button>
+						<button id="selectsession" type="button" class="btn btn-success">Select session
+						</button>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+
+					<button id="add" type="button" class="btn btn-primary">Add
+					</button>
+					<button id="edit" type="button" class="btn btn-secondary">Edit
+					</button>
+					<button id="remove" type="button" class="btn btn-danger">Remove
+					</button>
+					<button id="back" type="button" class="btn btn-danger">Back
+					</button>
+					<button id="save" type="button" class="btn btn-success">Done
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Header Close -->
+	<section class="section-header bg-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="text-center">
+						<h1 class="text-capitalize mb-4 font-lg text-white">Payment</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="section payment">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5">
+					<ul class="list-inline select-option border-bottom pb-4">
+						<li class="list-inline-item mr-5 mb-4 mb-lg-0">
+							<a href="shipping.html" class="text-black "><span
+									class="font-extra font-md border p-2 mr-3">01.</span> Shipping</a>
+						</li>
+						<li class="list-inline-item mr-5 mb-4 mb-lg-0">
+							<a href="payment.html" class="text-black font-weight-bold"><span
+									class="font-extra bg-primary font-md text-white  p-2 mr-3">02.</span>Payment</a>
+						</li>
+
+						<li class="list-inline-item">
+							<a href="confirmation.html" class="text-black"><span
+									class="font-extra font-md border p-2 mr-3">03.</span>Confirm Pay</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 col-lg-7">
+					<div class=" payment-form py-6">
+						<h3 id="emptytrue" class="headline mb-4 font-weight-bold border-bottom pb-3"></h3>
+						<form id="custinfo">
+							<h3 class="headline mb-4 font-weight-bold border-bottom pb-3">
+								Please check if the following information is correct, if no, you may go back to last
+								page to
+								modify again</h3>
+							<div class="form-group row">
+								<div class="form-group col-md-6 col-lg-6">
+									<div class="form-group">
+										<label>First Name</label>
+										<div id="first"></div>
+									</div>
+									<div class="form-group">
+										<label>Last Name</label>
+										<div id="last"></div>
+									</div>
+									<div class="form-group">
+										<input class="getfood" type="radio" name="getfood" id="deliverytrue"
+											value="delivery" disabled>
+										<label class="form-group-label" for="deliverytrue">
+											Delivery
+										</label>
+									</div>
+									<div class="form-group">
+										<input class="getfood" type="radio" name="getfood" id="pickuptrue"
+											value="pick up" disabled>
+										<label class="form-group-label" for="pickuptrue">
+											Pick up
+										</label>
+									</div>
+									<div class="row scene1">
+										<div class="flex">
+											<div class="card__face card__face--front">
+												<div data-aos="fade-up" data-aos-delay="0">
+													<div class="card border-0 ">
+														<div class="card-body ">
+															<div class="form-group">
+																<label>Address</label>
+																<div id="Fulladdress" style="color: black;"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card__face card__face--back">
+
+												<div class="" data-aos="fade-up" data-aos-delay="0">
+													<div class="card border-0 ">
+														<div class="card-body">
+															<h4 class="text-dark font-size-20">Pick up address:<br>
+																<a href="" class="typewrite" data-period="2000"
+																	data-type='[ "2188, Jalan Timah, Bandar Baru"]'>
+																	<span class="wrap"></span>
+																</a>
+																<br>
+																<a href="" class="typewrite" data-period="2000"
+																	data-type='[ "31900 Kampar, Negeri Perak"]'>
+																	<span class="wrap"></span>
+																</a>
+															</h4>
+															<div class="gmap_canvas"><iframe width="300" height="150"
+																	id="gmap_canvas"
+																	src="https://maps.google.com/maps?q=Grand%20kampar%20Hotel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+																	frameborder="0" scrolling="no" marginheight="0"
+																	marginwidth="0"></iframe><a
+																	href="https://www.whatismyip-address.com"></a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-md-6 col-lg-6">
+									<div class="form-group">
+										<label for="mainemail">Email address</label>
+										<div id="mainemail"></div>
+									</div>
+									<div class="form-group">
+										<label>Phone Number</label>
+										<div id="phone"></div>
+									</div>
+								</div>
+								<div class="form-group col-lg-12">
+									<label>Remark</label>
+									<textarea class="form-control" placeholder="Special Requirements" rows="5"
+										id="remark" name="booking-message" readonly></textarea>
+									<div class="mt-4">
+										<label>If no problem please scan the QR code below and screenshot the payment
+											receipt in order to be attacteh in Google Form below</label>
+										<img src="images/20200908_185325.jpg" alt="QR Code" width="300px" height="300px"
+											class="img-fluid">
+									</div>
+
+
+								</div>
+							</div>
+							<div class="form-group col-lg-12">
+								<div class="mt-4">
+									<div class='forms-studio col-lg-12' style="width: 100%;">
+										<iframe
+											src='https://script.google.com/macros/s/AKfycbyBZDF55CenVXRojN56YyJgd_ObMaSK8oUO2zuWkya_v-Tw1vQ/exec'></iframe>
+									</div>
+									<div>
+										<br>
+										<a href="#demo" class="btn btn-info btn3d float-left" data-toggle="collapse">The
+											form not
+											working? Clicking me!</a>
+										<div id="demo" class="collapse">
+											<label>If the form is not available, clicking the link below,
+												proceed with your payment receipt submission</label>
+											<a href="https://docs.google.com/forms/d/e/1FAIpQLSfTtVzO9QefFVTrbCAUcQMYPZL5t5zyZTr-_3CKnqB9ex9lUQ/viewform?usp=sf_link"
+												class="text-black" target="_blank"><span
+													class="font-extra font-md border p-2 mr-3"
+													style="background-color: blueviolet;">Alternative
+													form</span></a>
+										</div>
+
+									</div>
+									<div class="mt-4">
+										<a href="confirmation.html" onclick="submitdetail()"
+											class="btn btn-submit btn-lg btn3d float-right">Confirm</a>
+
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="col-md-12 col-lg-5">
+					<div class="card border-0 px-xl-5 secondary-bg py-4 mt-5 mt-lg-0 px-4">
+						<div class="">
+							<h4 class="text-dark font-size-20">Order Summery</h4>
+							<hr>
+							<div class="table-responsive">
+								<table class="table text-center">
+									<thead>
+										<tr>
+											<th scope="col">Product Name</th>
+											<th scope="col">Price</th>
+											<th scope="col">Quantity</th>
+										</tr>
+									</thead>
+									<tbody id="ordersummary">
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="media align-items-center border-bottom font-weight-medium py-3">
+							<div class="media-body">
+								<span>Subtotal</span>
+							</div>
+							<span class="text-dark" id="Subtotal"></span>
+						</div>
+
+						<div class="media align-items-center border-bottom font-weight-medium py-3">
+							<div class="media-body">
+								<span>Tax</span>
+							</div>
+							<span class="text-dark" id="tax"></span>
+						</div>
+
+						<div class="media align-items-center border-bottom font-weight-medium py-3">
+							<div class="media-body">
+								<span>Delivering &amp; Handling</span>
+							</div>
+							<span class="text-dark" id="delivery"></span>
+						</div>
+
+						<div class="media justify-content-between align-items-center py-3">
+							<span class="text-dark ">Grand Total</span>
+							<span class="text-dark font-weight-bold" id="grandtotal"></span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+<!--Footer start -->
+<footer class="section footer">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">About</h4>
+					<p>JumpMasters hopes to bring you the better best of Malaysia's cusines. Indulge in your
+						favourite delights delivered to your doorstep steaming hot! We offer the best prices for
+						Malaysia's best night market foods.</p>
+
+					<ul class="list-inline footer-socials mt-4">
+						<li class="list-inline-item"><a href="https://www.facebook.com"><i
+									class="ti-facebook mr-2"></i></a></li>
+						<li class="list-inline-item"><a href="https://wa.link/ybfh21"><i
+									class="ti-themify-favicon-alt mr-2"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">Contact Info</h4>
+
+					<ul class="list-unstyled mb-0 footer-contact">
+						<li><i class="ti-mobile"></i><a class="text-light" href="https://wa.link/ybfh21">+60 11-3810
+								0852</a></li>
+						<li><i class="ti-email"></i><a class="text-light"
+								href="mailto:jumpmasterweb@gmail.com">jumpmasterweb@gmail.com</a></li>
+						<li class="text-light"><i class="ti-map"></i>Kampar, Perak Malaysia</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">Opening Hours</h4>
+					<div class="info mb-4">
+						<p class="mb-0">Monday - Sunday</p>
+						<h5>05:00 PM - 11:00 PM</h5>
+					</div>
+					<div class="info">
+						<p class="mb-0">Physical Stall, Every Wednesday</p>
+						<h5>05:00 PM - 11:00 PM</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Google Map Integration -->
+			<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+				<span class="text-primary font-md font-extra">Location</span>
+				<div class="gmap_canvas"><iframe width="372" height="406" id="gmap_canvas"
+						src="https://maps.google.com/maps?q=Grand%20kampar%20Hotel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+						frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+						href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a></div>
+			</div>
+			<!-- Google Map Integration End-->
+
+			<div class="col-lg-8 col-md-9 mb-5 mb-lg-0">
+				<div class="col-lg-12 text-center">
+					<br><br>
+					<span class="text-primary font-md font-extra">Get news from Jumpmaster!</span>
+					<h4 class="mb-3" style="color:white;">Fill me</h4>
+					<div class="form-group">
+						<input id="sendemail" type="email" class="form-control" placeholder="Enter Email" required>
+						<button id="emailsubmit" class="btn btn-dark">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+<section class="footer-btm py-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
+					<p class="mb-0 ">Copyright &copy; 2020 by <a href="index.html" class="text-white">Jumpmaster
+							Night Market</a></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Footer  End -->
+	<!-- jQuery -->
+	<script src="plugins/jQuery/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="plugins/aos/aos.js"></script>
+	<script src="plugins/shuffle/shuffle.min.js"></script>
+	<script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="plugins/date-picker/datepicker.min.js"></script>
+	<script src="plugins/clock-picker/clockpicker.min.js"></script>
+	<script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+	<script src="plugins/swiper/swiper.min.js"></script>
+	<script src="plugins/instafeed/instafeed.min.js"></script>
+	<script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+
+	<!-- Google Map -->
+	<script src="plugins/google-map/gmap.js"></script>
+	<!-- Main Script -->
+	<script src="js/contact.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/weatherapi.js"></script>
+	<script src="js/user.js"></script>
+	<script>
+		pastOrdersList = new Array();
+		var payment;
+		var total, cartObj;
+		function cartDetail() {
+			if (getLocalData("Payment") != null) {
+				payment = JSON.parse(getLocalData("Payment"));
+				document.getElementById("first").innerText = payment.first;;
+				document.getElementById("last").innerText = payment.last;
+				if (payment.method == "Delivery") {
+					$('#deliverytrue').prop("checked", true);
+					$('#pickuptrue').prop("checked", false);
+					document.getElementById('Fulladdress').innerText = payment.Fulladdress;
+				} else {
+					$('#deliverytrue').prop("checked", false);
+					$('#pickuptrue').prop("checked", true);
+					document.querySelectorAll('.flex')[0].classList.toggle('is-flipped');
+					document.getElementById("Fulladdress").innerText = "Not applicable";
+				}
+				document.getElementById("mainemail").innerText = payment.mainemail;
+				document.getElementById("phone").innerText = payment.phone;
+				document.getElementById("remark").innerText = payment.remark;
+
+				total = payment.total;
+				update_amount();
+				cartObj = JSON.parse(getLocalData("NETSELL5_USERCART"));
+				var summary = document.getElementById("ordersummary");
+				summary.innerHTML = "";
+				for (var i = 0; i < cartObj.length; i++) {
+					if (cartObj[i] !== null) {
+						var newRow = summary.insertRow(i);
+						var cell1 = newRow.insertCell(0);
+						cell1.innerHTML = '<span class="getnames">' + cartObj[i].PRONAME + '</span>';
+						cell1.classList.add("text-left");
+						var cell2 = newRow.insertCell(1);
+						cell2.innerHTML = 'RM' + cartObj[i].PRICE;
+						var cell3 = newRow.insertCell(2);
+						cell3.innerHTML = cartObj[i].QTORD;
+						var cell4 = newRow.insertCell(3);
+					}
+				}
+			}
+			else {
+				alert("Your Delivery detail haven't filled up!");
+				document.getElementById("custinfo").style.visibility = "hidden";
+				document.getElementById("emptytrue").innerHTML = "Your delivery information haven't completed, so that u cannot access this page."
+			}
+		}
+		function getLocalData(name) {
+			return localStorage.getItem(name)
+		}
+		function setLocalData(name, value) {
+			if (value != null)
+				localStorage.setItem(name, value);
+			else
+				localStorage.removeItem(name);
+		}
+
+		function update_amount() {
+			document.getElementById("Subtotal").innerText = "RM " + total.subtotal.toFixed(2);
+			document.getElementById("delivery").innerText = "RM " + total.delivery.toFixed(2);
+			document.getElementById("tax").innerText = "RM " + total.tax.toFixed(2);
+			document.getElementById("grandtotal").innerText = "RM " + total.grandtotal.toFixed(2);
+		}
+		$(document).ready(function () {
+			cartDetail();
+		});
+		var detail = {
+			"access_token": "kawuvevclr4wbsd2bppxmem9"
+		};
+
+		function onSuccess() {
+			console.log("Delivery information submitted Successfully");
+		}
+
+		function onError(error) {
+			console.log("Fail to submit the delivery information");
+		}
+
+
+		function senddeliverycart() {
+			var title = "Order from " + payment.first + " " + payment.last;
+			var content = "Buyer name: " + payment.first + " " + payment.last + "\n" +
+				"Method: " + payment.method + "\n" +
+				"Full Address: " + payment.Fulladdress + "\n" +
+				"Email: " + payment.mainemail + "\n" +
+				"Phone: " + payment.phone + "\n" +
+				"Remark: " + payment.remark + "\n\n" +
+				"Product Name\tPrice(RM)\tQuantity(RM)\n";
+
+			for (var i = 0; i < cartObj.length; i++) {
+				content += cartObj[i].PRONAME + "\t" + cartObj[i].PRICE + "\t" + cartObj[i].QTORD + "\n";
+			}
+			content +=
+				"\nSubtotal: RM" + total.subtotal + "\n" +
+				"Tax: RM" + total.tax + "\n" +
+				"Delivery fees: RM" + total.delivery + "\n" +
+				"Grand total: RM" + total.grandtotal + "\n\n";
+			detail['subject'] = title;
+			detail['text'] = content;
+
+			$.post('https://postmail.invotes.com/send',
+				detail,
+				onSuccess
+			).fail(onError);
+
+		}
+		function submitdetail() {
+			senddeliverycart()
+			var Paid = new Object();
+			Paid['Payment'] = "Made";
+			setLocalData("Paid", JSON.stringify(Paid));
+			setLocalData("Payment", null);
+			setLocalData("TOTAL", null);
+			history();
+			setLocalData("NETSELL5_USERCART", null);
+			setLocalData("NETSELL5_USERCART_CI", null);
+		}
+
+		//PAMELA PAST ORDERS LIST (ADD INTO LOCAL STORAGE)
+		function history() {
+			var pastOrders = JSON.parse(getLocalData("PastOrdersList"));
+			var paidObj = JSON.parse(getLocalData("NETSELL5_USERCART"));
+			var num = JSON.parse(getLocalData("NETSELL5_USERCART_CI"));
+
+			if (pastOrders != null) {
+				//original list
+				for (var i = 0; i < pastOrders.length; i++) {
+					pastOrdersList.push(pastOrders[i]);
+				}
+
+				//append new items (paid)
+				for (var i = 0; i < num; i++) {
+					var flag = false;
+					for (var j = 0; j < pastOrdersList.length; j++) {
+						if (pastOrdersList[j].PRONAME === paidObj[i].PRONAME) {
+							qty = "" + (parseInt(pastOrdersList[j].QTORD) + 1);
+							pastOrdersList[j]["QTORD"] = qty; //edit quantity at a given index
+							flag = true;
+						}
+					}
+					if (!flag) {
+						pastOrdersList.push(paidObj[i]);
+					}
+				}
+			}
+			else {
+				for (var i = 0; i < num; i++) {
+					pastOrdersList.push(paidObj[i]);
+				}
+			}
+			setLocalData("PastOrdersList", JSON.stringify(pastOrdersList));
+		}
+	</script>
+</body>
+
+</html>

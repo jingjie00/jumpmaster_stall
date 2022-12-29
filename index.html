@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<title>Jumpmaster Stall</title>
+
+	<link rel="manifest" href="manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Jumpmaster Stall">
+	<meta name="apple-mobile-web-app-title" content="Jumpmaster Stall">
+	<meta name="theme-color" content="#FF9800">
+	<meta name="msapplication-navbutton-color" content="#FF9800">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+	<!-- ** Plugins Needed for the Project ** -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+	<link rel="stylesheet" href="plugins/aos/aos.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+	<link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+	<link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+	<link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+	<link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+	<link rel="stylesheet" href="plugins/devices.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+	<!--Cube 3D-->
+	<style>
+		@-webkit-keyframes spincube {
+
+			from,
+			to {
+				-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+
+			16% {
+				-webkit-transform: rotateY(-90deg);
+			}
+
+			33% {
+				-webkit-transform: rotateY(-90deg) rotateZ(90deg);
+			}
+
+			50% {
+				-webkit-transform: rotateY(-180deg) rotateZ(90deg);
+			}
+
+			66% {
+				-webkit-transform: rotateY(-270deg) rotateX(90deg);
+			}
+
+			83% {
+				-webkit-transform: rotateX(90deg);
+			}
+		}
+
+		@keyframes spincube {
+
+			from,
+			to {
+				-moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				-ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+
+			16% {
+				-moz-transform: rotateY(-90deg);
+				-ms-transform: rotateY(-90deg);
+				transform: rotateY(-90deg);
+			}
+
+			33% {
+				-moz-transform: rotateY(-90deg) rotateZ(90deg);
+				-ms-transform: rotateY(-90deg) rotateZ(90deg);
+				transform: rotateY(-90deg) rotateZ(90deg);
+			}
+
+			50% {
+				-moz-transform: rotateY(-180deg) rotateZ(90deg);
+				-ms-transform: rotateY(-180deg) rotateZ(90deg);
+				transform: rotateY(-180deg) rotateZ(90deg);
+			}
+
+			66% {
+				-moz-transform: rotateY(-270deg) rotateX(90deg);
+				-ms-transform: rotateY(-270deg) rotateX(90deg);
+				transform: rotateY(-270deg) rotateX(90deg);
+			}
+
+			83% {
+				-moz-transform: rotateX(90deg);
+				-ms-transform: rotateX(90deg);
+				transform: rotateX(90deg);
+			}
+		}
+
+		.cubespinner {
+			-webkit-animation-name: spincube;
+			-webkit-animation-timing-function: ease-in-out;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-duration: 12s;
+
+			animation-name: spincube;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+			animation-duration: 12s;
+
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+
+			-webkit-transform-origin: 60px 60px 0;
+			-moz-transform-origin: 60px 60px 0;
+			-ms-transform-origin: 60px 60px 0;
+			transform-origin: 60px 60px 0;
+		}
+
+		.cubespinner div {
+			position: absolute;
+			width: 120px;
+			height: 120px;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+			line-height: 120px;
+			text-align: center;
+		}
+
+		.cubespinner .face1 {
+			-webkit-transform: translateZ(60px);
+			-moz-transform: translateZ(60px);
+			-ms-transform: translateZ(60px);
+			transform: translateZ(60px);
+		}
+
+		.cubespinner .face2 {
+			-webkit-transform: rotateY(90deg) translateZ(60px);
+			-moz-transform: rotateY(90deg) translateZ(60px);
+			-ms-transform: rotateY(90deg) translateZ(60px);
+			transform: rotateY(90deg) translateZ(60px);
+		}
+
+		.cubespinner .face3 {
+			-webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+			-moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+			-ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+			transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+		}
+
+		.cubespinner .face4 {
+			-webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+			-moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+			-ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+			transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+		}
+
+		.cubespinner .face5 {
+			-webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+			-moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+			-ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+			transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+		}
+
+		.cubespinner .face6 {
+			-webkit-transform: rotateX(-90deg) translateZ(60px);
+			-moz-transform: rotateX(-90deg) translateZ(60px);
+			-ms-transform: rotateX(-90deg) translateZ(60px);
+			transform: rotateX(-90deg) translateZ(60px);
+		}
+
+		.mapouter {
+			position: relative;
+			text-align: center;
+			height: 100%;
+			width: 100%;
+			border-radius: 20px;
+			display: inline-block;
+		}
+
+		.gmap_canvas {
+			overflow: hidden;
+			display: inline-block;
+			background: none !important;
+			height: 100%;
+			width: 100%;
+			border-radius: 20px;
+		}
+
+		.modal-backdrop {
+			z-index: 5;
+		}
+	</style>
+
+	<!--Flip Card-->
+	<style>
+		.scene1 {
+			width: 500px;
+			height: 500px;
+			perspective: 600px;
+		}
+
+		.card1 {
+			width: 100%;
+			height: 100%;
+			transition: transform 1s;
+			transform-style: preserve-3d;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.card1.is-flipped {
+			transform: rotateX(180deg) rotateZ(180deg);
+		}
+
+		.card__face {
+			position: absolute;
+			color: white;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.card__face--front {
+			background: white;
+		}
+
+		.sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			z-index: 999999999;
+			top: 0;
+			width: 100%;
+		}
+
+		.card__face--back {
+			background: white;
+			transform: rotateY(180deg);
+		}
+
+		.divs {
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<!--Loading Icon-->
+	<div class="preloader">
+		<img src="images/preloader.gif" alt="preloader" class="img-fluid">
+	</div>
+
+	<!-- Header Start -->
+	<!-- Nav Bar-->
+	<header class="navigation fixed-top">
+
+		<nav id="navbar" class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100 "
+			style="background: url('./images/bg/bg-2.jpg') 10% 10% no-repeat;position: fixed;top: 0;width: 100%;transition: top 0.3s;z-index: -99;">
+			<div class="container">
+				<a id="logo" class="navbar-brand" style="float:inline-start;z-index: 100;height:auto;"
+					href="index.html">
+					<img src="images/logo.png" alt="" class="img-fluid">
+				</a>
+
+				<button class="navbar-toggler collapsed ml-auto float-xs-right" type="button" data-toggle="collapse"
+					data-target="#navigation" aria-controls="navigation" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class=" fa fa-bars"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navigation">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Info</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="about.html">About Us </a></li>
+								<li><a class="dropdown-item" href="contact.html">Contact us</a></li>
+							</ul>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="weather.html">Weather</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="past-order.html">Past Orders</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="product.html">Product</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="cart.html">Cart</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Reservation</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="shipping.html">Shipping</a></li>
+								<li><a class="dropdown-item" href="payment.html">Payment</a></li>
+								<li><a class="dropdown-item" href="confirmation.html">Confirmation</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li><button id="detail" type="button" class="btn btn-warning" data-toggle="modal"
+								data-target="#myModal">
+								My detail
+							</button></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- The User detail -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Hi customer</h4>
+
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+				</div>
+				<div id="alert">
+
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<h2 id="indicate">Mode</h2>
+					<div class="form-group">
+						<label class="control-label">Name:</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<div class="dropdown">
+									<button id="select_button" class="btn btn-secondary dropdown-toggle" type="button">
+										Select:
+									</button>
+									<div id="name_select" class="dropdown-menu">
+
+									</div>
+								</div>
+							</div>
+							<input id="name" type="text" class="form-control">
+						</div>
+					</div>
+					<div id="valid">
+						<div class="form-group">
+							<label class="control-label">Address:</label>
+							<div class="input-group">
+								<input id="address" type="text" class="form-control">
+								<div class="input-group-append">
+									<button id="location" class="btn btn-dark">From map</button>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Email:</label>
+							<input id="email" type="text" class="form-control">
+						</div>
+						<button id="clearsession" type="button" class="btn btn-warning">Clear my session
+						</button>
+						<button id="selectsession" type="button" class="btn btn-success">Select session
+						</button>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+
+					<button id="add" type="button" class="btn btn-primary">Add
+					</button>
+					<button id="edit" type="button" class="btn btn-secondary">Edit
+					</button>
+					<button id="remove" type="button" class="btn btn-danger">Remove
+					</button>
+					<button id="back" type="button" class="btn btn-danger">Back
+					</button>
+					<button id="save" type="button" class="btn btn-success">Done
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Header Close -->
+
+
+	<!--  Banner start -->
+	<section class="slider-hero hero-slider  hero-style-1  ">
+		<div class="swiper-container swiper-container-horizontal">
+			<div class="swiper-wrapper">
+				<!-- start slide-item -->
+				<div class="swiper-slide slide-item">
+					<div class="slide-inner slide-bg-image main-sider-inner"
+						data-background="images/banner/slide-1.jpg">
+						<!-- <div class="overlay"></div> -->
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-7">
+									<span data-swiper-parallax="300" class="text-primary font-extra font-md">Welcome to
+										Our
+										Pasar Malam Stall</span>
+									<h1 class="mt-3 mb-5 text-lg text-white" data-swiper-parallax="400">A Malaysia
+										Culture</h1>
+									<a id="IntroButton" href="#Intro" class="btn btn-main mr-3"
+										data-swiper-parallax="500">See more &darr; &darr;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end slide-item -->
+
+				<!-- start slide-item -->
+				<div class="swiper-slide slide-item">
+					<div class="slide-inner slide-bg-image main-sider-inner"
+						data-background="images/banner/slide-2.jpg">
+						<!-- <div class="overlay"></div> -->
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-7">
+									<span data-swiper-parallax="300" class="text-primary font-extra font-md">A
+										promotion</span>
+									<h1 class="mt-3 mb-5 text-lg text-white" data-swiper-parallax="400">Somethings is
+										offer
+										now!<br> Come to grab it!!!!</h1>
+									<a href="product.html" class="btn btn-main mr-3" data-swiper-parallax="500">Grab
+										it</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end slide-item -->
+
+				<!-- start slide-item -->
+				<div class="swiper-slide slide-item">
+					<div class="slide-inner slide-bg-image main-sider-inner"
+						data-background="images/banner/slide-3.jpg">
+						<!-- <div class="overlay"></div> -->
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-7">
+									<span data-swiper-parallax="300" class="text-primary font-extra font-md">A new food
+										to be lauch</span>
+									<h1 class="mt-3 mb-5 text-lg text-white" data-swiper-parallax="400">The Ayam bakar
+										is very delicious yohhhh!</h1>
+									<a href="product.html" class="btn btn-main mr-3" data-swiper-parallax="500">View the
+										food</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end slide-item -->
+			</div>
+			<!-- end swiper-wrapper -->
+			<!-- swipper controls -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+	</section>
+	<!--  Banner End -->
+
+
+	<!--  Intro start -->
+	<section class="intro" style="background-color:palegreen">
+		<div class="container text-center">
+			<div class="intro-wrap bg-white w-100">
+				<div class="row no-gutters">
+					<div class="col-lg-4 col-md-4">
+						<div class="intro-item" data-aos="fade-up">
+							<i class="icofont-soup-bowl"></i>
+							<h3 class="mt-3">Delicious Food</h3>
+							<p>Here we have the most Malaysian food yohhh. Grab it now la</p>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-4">
+						<div class="intro-item bg-gray " data-aos="fade-up" data-aos-delay="300">
+							<i class="icofont-tasks"></i>
+							<h3 class="mt-3">Online Order</h3>
+							<p>We made online!! No need go out for risk to get Covid-19!!</p>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-4">
+						<div class="intro-item" data-aos="fade-up" data-aos-delay="600">
+							<i class="icofont-map-pins"></i>
+							<h3 class="mt-3">Free delivery</h3>
+							<p>We provide a free delivery within 300 meter. (T&C apply)</p>
+						</div>
+					</div>
+
+				</div>
+				<button class="js-notify-btn js-push-btn btn btn-success animated bounce infinite">Click me to see
+					magic!</button>
+			</div>
+		</div>
+	</section>
+	<!--  Intro End -->
+
+	<!-- About start -->
+	<section class="section about" id="Intro" style="background-color:thistle;">
+		<div class="container">
+			<div class="row  justify-content-center mb-5">
+				<div class="col-lg-8 text-center">
+					<span class="text-primary font-extra font-md">About Jumpmaster</span>
+					<h2 class="mt-3 mb-4">We are the FIRST modern Pasar Malam in Malaysia </h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-4 mb-5 mb-lg-0" data-aos="fade-up">
+					<img src="images/about/qualityfood.jpg" alt="" class="img-fluid">
+					<div class="mt-3">
+						<h3>Quality Food</h3>
+						<p>We have a good chef from different race. AND all undergo a medical checkup to produce a tasty
+							and safty food
+						</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+					<img src="images/about/friendly.jpg" alt="" class="img-fluid">
+					<div class="mt-3">
+						<h3>Friendly place</h3>
+						<p>Pasar Malam is a nice place for every Malaysian, now we try to have a change to on-line since
+							Covid-19
+						</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="600">
+					<img src="images/about/affortable.jpg" alt="" class="img-fluid">
+					<div class="mt-3">
+						<h3>Affordable price</h3>
+						<p>All food are cheap and tasty like Michelin 5 star!!!!
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About  End -->
+
+	<!-- Flipping animate-->
+	<section class="section menu-2 secondary-bg" id="afterme">
+		<div class="container toscroll">
+			<div class="row  justify-content-center mb-5 image">
+				<div class="col-lg-8 text-center">
+					<span class="text-primary font-extra font-md">Our stall</span>
+					<h2 class="mt-3 mb-4">Click me to see more!</h2>
+
+
+				</div>
+			</div>
+
+			<div class="row justify-content-center mb-5 image">
+				<div class="scene1 scene--card divs">
+					<div class="card1">
+						<div class="card__face card__face--front">
+							<div data-aos="fade-up" data-aos-delay="0">
+								<div class="card border-0 menu-item3">
+									<img src="./images/Current.png" alt="" class="img-fluid" id="findme1">
+									<div class="card-body" style="background-color:pink">
+										<h3 class="card-title">Our main stall
+										</h3>
+										<p>Here is our usual main stall</p>
+										<div class="info mb-4">
+											<p class="mb-0">Monday - Sunday</p>
+											<h5>05:00 PM - 11:00 PM</h5>
+										</div>
+										<div class="info">
+											<p class="mb-0">Physical Stall, Every Wednesday</p>
+											<h5>05:00 PM - 11:00 PM</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="card__face card__face--back">
+
+							<div class="" data-aos="fade-up" data-aos-delay="0">
+								<div class="card border-0 menu-item3">
+									<div class="card-body" style="background-color:pink">
+										<h3 class="card-title">Our main stall</h3>
+										<p>We started since 2006. We try to serve our best, please continue support us
+											ahh</p>
+										<p>We are not perfect but we will continue to be better</p>
+										<div class="info mb-4">
+											<p class="mb-0">Monday - Sunday</p>
+											<h5>05:00 PM - 11:00 PM</h5>
+										</div>
+										<div class="info">
+											<p class="mb-0">Physical Stall, Every Wednesday</p>
+											<h5>05:00 PM - 11:00 PM</h5>
+										</div>
+										<br><br><br><br><br><br><br><br>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="scene1 scene--card divs">
+					<div class="card1">
+						<div class="card__face card__face--front">
+
+							<div data-aos="fade-up" data-aos-delay="0">
+								<div class="card border-0 menu-item3">
+									<img src="./images/StayTuned.jpg" alt="" class="img-fluid" id="findme2">
+
+									<div class="card-body" style="background-color:lightcyan">
+										<h3 class="card-title">Stay Tuned
+										</h3>
+										<p>We want open a new stall at Kampar already!!!</p>
+										<div>We want open a new stall at Kampar already!!!</div>
+										<p>A another stall!!!</p>
+										<div>A another stall!!!</div>
+										<p>Stay Tuned!!!</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="card__face card__face--back">
+							<div class="" data-aos="fade-up" data-aos-delay="0">
+								<div class="card border-0 menu-item3">
+									<div class="card-body" style="background-color:lightcyan">
+										<h3 class="card-title">Developing....</h3>
+										<p>We try to provide more good taste food to all people in a shorter distance
+										</p>
+										<p>Stay Tuned!! Our preparation is closed to be done.</p>
+										<p>Tell you a secret here: Our probably location:</p>
+										<div class="mapouter container-fluid p-0 d-flex justify-content-center">
+											<div
+												style="position: relative;text-align: right;height: 215px;width: 370px;">
+												<div style="overflow: hidden;background: none !important;width: 370px;">
+													<iframe width="370" height="215" id="gmap_canvas"
+														src="https://maps.google.com/maps?q=utar&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+														frameborder="0" scrolling="no" marginheight="0"
+														marginwidth="0"></iframe>
+												</div>
+											</div>
+										</div>
+										<p></p>
+										<p>Remember Us: Your Jumpmaster</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Google Graph-->
+	<section style="background-color:lightgoldenrodyellow">
+		<div class="row  justify-content-center">
+			<div class="col-lg-8 text-center">
+				<span class="text-primary font-extra font-md">Your view page Analysis</span>
+				<h2 class="mt-3 mb-4">Very Thank you for visiting us </h2>
+				<br><br>
+			</div>
+		</div>
+		<div class="container-fluid" style="width:100%; height:500px">
+			<div class="row  justify-content-center mb-5">
+				<div class="mapouter container-fluid p-0 d-flex justify-content-center">
+					<div id="chart_div" class="justify-content-center" style="width:100%; height:500px; "></div>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<button id="reset" class="btn btn-primary ">Reset</button>
+			<button id="default" class="btn btn-secondary ">Default</button>
+		</div>
+
+		<br><br>
+	</section>
+	<!--Google Graph End-->
+
+	<!--Weather Start-->
+	<section style="background-color:burlywood">
+		<div class="row  justify-content-center">
+			<div class="col-lg-8 text-center">
+				<span class="text-primary font-extra font-md">The current weather</span>
+				<h2 class="mt-3 mb-4">Your weather, our responsibility</h2>
+			</div>
+		</div>
+		<div class="notification"> </div>
+		<div class="weather-container row  justify-content-center">
+			<div class="weather-icon">
+				<img src="icons/unknown.png" alt="">
+			</div>
+			<div class="temperature-value">
+				<p>- °<span>C</span></p>
+			</div>
+			<p>|</p>
+			<div class="temperature-description">
+				<p> - </p>
+			</div>
+			<p>|</p>
+			<div class="location">
+				<p>-</p>
+			</div>
+		</div>
+		<div class="row  justify-content-center">
+			<a class="btn btn-secondary" href="weather.html">View all the weather broadcast in hours</a>
+
+			<section class="js-sub-endpoint">
+				<code class="js-subscription-json"></code>
+				<code class="js-endpoint-url"></code>
+			</section>
+		</div>
+		<br><br>
+	</section>
+	<!--Weather End-->
+
+	<!-- Reminder start (3D Effect Here) -->
+	<section class="section cta">
+		<div class="overlay"></div>
+		<div id="savedetail" class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<span class="font-extra text-md-2 text-white-70">Make it easier</span>
+					<h2 class="mt-3 text-white mb-4">Save your detail first la</h2>
+					<div class="stage row justify-content-center" style="width: 88%; height: 120px;">
+						<div id="shortcut" class="cubespinner btn-white">
+							<div class="face1"><a href="#detail" style="font-size:2em;">Save</a></div>
+							<div class="face2"><a href="#detail" style="font-size:2em;">My</a></div>
+							<div class="face3"><a href="#detail" style="font-size:2em;">Detail</a></div>
+							<div class="face4"><a href="#detail" style="font-size:2em;">First</a></div>
+							<div class="face5"><a href="#detail" style="font-size:2em;">Lah</a></div>
+							<div class="face6"><a href="#detail" style="font-size:2em;">ClickMe</a></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Reminder  End -->
+
+	<!-- DISHES start -->
+	<section class="section menu" style="background-color:azure">
+		<div class="container">
+			<div class="row  justify-content-center mb-5">
+				<div class="col-lg-8 text-center">
+					<span class="text-primary font-extra font-md">All Time Delights</span>
+					<h2 class="mt-3 mb-4">Try out our timeless Malaysia cuisines</h2>
+				</div>
+			</div>
+			<div class="col-12 text-center mb-5">
+				<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					<label class="btn active">
+						<input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+					</label>
+					<label class="btn">
+						<input type="radio" name="shuffle-filter" value="main" />Savoury Meals
+					</label>
+					<label class="btn">
+						<input type="radio" name="shuffle-filter" value="dessert" />Desserts and Sides
+					</label>
+					<label class="btn">
+						<input type="radio" name="shuffle-filter" value="alacarte" />A La Carte
+					</label>
+				</div>
+			</div>
+
+
+			<div class="row shuffle-wrapper food-gallery" id="productlink">
+				<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;main&quot;,&quot;alacarte&quot;]">
+					<div class="menu-item position-relative ">
+						<div class="d-flex align-items-center">
+							<img src="images/products/pro15.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme6">
+							<div>
+								<h4>Mee Goreng <span>RM 4</span></h4>
+								<p>Mamak-style fried noodles with prawns and chicken </p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;main&quot;]">
+					<div class="menu-item position-relative ">
+						<div class="d-flex align-items-center">
+							<img src="images/products/pro16.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme7">
+							<div>
+								<h4>Char Kue Tiao - <span>RM 6</span></h4>
+								<p>Chinese version of Mee Goreng</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;alacarte&quot;]">
+					<div class="menu-item position-relative ">
+						<div class="d-flex align-items-center">
+							<img src="images/products/pro18.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme8">
+							<div>
+								<h4>Ayam Goreng Merempah- <span>RM 5</span></h4>
+								<p>Crispy fried chicken with spice and herb batter</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;dessert&quot;]">
+					<div class="menu-item position-relative ">
+						<div class="d-flex align-items-center">
+							<img src="images/products/pro17.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme9">
+							<div>
+								<h4>Papaya Dessert - <span>RM 5</span></h4>
+								<p>Papaya sweet soup boiled with snow fungus and peach gum</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 mb-4 shuffle-item"
+					data-groups="[&quot;alacarte&quot;,&quot;dessert&quot;]">
+					<div class="menu-item position-relative ">
+						<div class="d-flex align-items-center">
+							<img src="images/products/pro19.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme10">
+							<div>
+								<h4>Mushroom Soup - <span>RM 6</span></h4>
+								<p>The perfect blend of heavy cream and fresh, handpicked mushrooms</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 mb-4 shuffle-item" data-groups="[&quot;alacarte&quot;]">
+					<div class="menu-item position-relative ">
+						<div class="d-flex align-items-center">
+							<img src="images/products/pro20.jpg" alt="" class="img-fluid mb-3 mb-lg-0" id="findme11">
+							<div>
+								<h4>Fried Prawn - <span>RM 6</span></h4>
+								<p>Crispy fried prawns with a side of tangy mayo</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!-- DISHES  End -->
+
+	<!--App start (Video Here)-->
+	<section class="section download" style="background-color:wheat;">
+		<div class="container">
+			<div class="row ">
+				<div class="col-lg-12 col-md-12">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-6">
+							<iframe style="width:100%" width="400" height="315"
+								src="https://www.youtube-nocookie.com/embed/3cIee4VfD9s?controls=0" frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+						<div class="col-lg-6 col-md-6 justify-content-center text-center">
+							<span class="text-primary font-md font-extra ">Make it easy</span>
+							<h2 class="mt-3">Get the Progressive Web App</h2>
+							<div class="mt-5">
+								<button type="button" class="btn btn-info" data-toggle="collapse"
+									data-target="#installtext">Get it by install
+									me</button>
+								<div id="installtext" class="collapse">
+									Please click the '⊕' icon on your right of the address bar!
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- App  End -->
+
+	<!--Sop of night market-->
+	<section class="section download" style="background-color:mediumturquoise;">
+		<div class="container">
+			<div class="row ">
+				<div class="col-lg-12 col-md-12">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-6 justify-content-center text-center">
+							<span class="text-primary font-md font-extra">No RM1000 samam</span>
+							<h2 class="mt-3 typewrite">Follow the SOP lah</h2>
+							<a href="https://www.facebook.com/PolisDirajaMalaysia/posts/3225260884150863"
+								class="btn btn-secondary" data-toggle="tooltip" data-placement="right"
+								title="Say by police der">
+								More info
+							</a>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<iframe style="width:100%" width="400" height="315"
+								src="https://www.youtube.com/embed/girxksTXyPU" frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Sop of night market-->
+
+	<!-- Google Map -->
+	<section class="section row  d-flex justify-content-center mb-5" style="background-color:lightgray;">
+		<div class="col-lg-6 col-md-6 text-center">
+			<span class="text-primary font-md font-extra">Where was us?</span>
+			<h2 class="mt-3">Open with google-map lahh!</h2>
+		</div>
+		<div class="mapouter">
+			<div><iframe width="90%" height="500"
+					src="https://maps.google.com/maps?q=Kampar%20grand%20hotel&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+					frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+					href="https://2torrentz.net"></a></div>
+		</div>
+	</section>
+	<!-- Google Map End-->
+
+
+
+	<!-- Embed Chat -->
+	<div style="background-color: pink;">
+		<iframe src="https://minnit.chat/Query?embed&nickname=" style="border:none;width:100%;height:500px;"
+			allowTransparency="true"></iframe><br><a href="https://minnit.chat/Query" target="_blank"></a>
+	</div>
+
+	<!-- Embed Chat End -->
+
+	<!--Footer start -->
+	<footer class="section footer">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+					<div class="widget">
+						<h4 class="mb-3">About</h4>
+						<p>JumpMasters hopes to bring you the better best of Malaysia's cusines. Indulge in your
+							favourite delights delivered to your doorstep steaming hot! We offer the best prices for
+							Malaysia's best night market foods.</p>
+
+						<ul class="list-inline footer-socials mt-4">
+							<li class="list-inline-item"><a href="https://www.facebook.com"><i
+										class="ti-facebook mr-2"></i></a></li>
+							<li class="list-inline-item"><a href="https://wa.link/ybfh21"><i
+										class="ti-themify-favicon-alt mr-2"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+					<div class="widget">
+						<h4 class="mb-3">Contact Info</h4>
+
+						<ul class="list-unstyled mb-0 footer-contact">
+							<li><i class="ti-mobile"></i><a class="text-light" href="https://wa.link/ybfh21">+60 11-3810
+									0852</a></li>
+							<li><i class="ti-email"></i><a class="text-light"
+									href="mailto:jumpmasterweb@gmail.com">jumpmasterweb@gmail.com</a></li>
+							<li class="text-light"><i class="ti-map"></i>Kampar, Perak Malaysia</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+					<div class="widget">
+						<h4 class="mb-3">Opening Hours</h4>
+						<div class="info mb-4">
+							<p class="mb-0">Monday - Sunday</p>
+							<h5>05:00 PM - 11:00 PM</h5>
+						</div>
+						<div class="info">
+							<p class="mb-0">Physical Stall, Every Wednesday</p>
+							<h5>05:00 PM - 11:00 PM</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+                <!-- Google Map Integration -->
+                <div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+                    <span class="text-primary font-md font-extra">Location</span>
+                    <div class="gmap_canvas"><iframe width="372" height="406" id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=Grand%20kampar%20Hotel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                            href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a></div>
+                </div>
+                <!-- Google Map Integration End-->
+
+                <div class="col-lg-8 col-md-9 mb-5 mb-lg-0">
+                    <div class="col-lg-12 text-center">
+                        <br><br>
+                        <span class="text-primary font-md font-extra">Get news from Jumpmaster!</span>
+                        <h4 class="mb-3" style="color:white;">Fill me</h4>
+                        <div class="form-group">
+                            <input id="sendemail" type="email" class="form-control" placeholder="Enter Email" required>
+                            <button id="emailsubmit" class="btn btn-dark">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		</div>
+	</footer>
+	<section class="footer-btm py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
+						<p class="mb-0 ">Copyright &copy; 2020 by <a href="index.html" class="text-white">Jumpmaster
+								Night Market</a></p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer  End -->
+
+	<!-- jQuery -->
+	<script src="plugins/jQuery/jquery.min.js"></script>
+	<script src="js/pagination.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="plugins/aos/aos.js"></script>
+	<script src="plugins/shuffle/shuffle.min.js"></script>
+	<script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="plugins/date-picker/datepicker.min.js"></script>
+	<script src="plugins/clock-picker/clockpicker.min.js"></script>
+	<script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+	<script src="plugins/swiper/swiper.min.js"></script>
+	<script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+
+	<!--email-->
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+	<!-- Share this-->
+	<script src='https://platform-api.sharethis.com/js/sharethis.js#property=5f49ccb7f73f72001282f8ed&product=sop'
+		async='async'></script>
+
+	<!-- Main Script -->
+	<script src="js/script.js"></script>
+	<script src="js/weatherapi.js"></script>
+	<script src="js/user.js"></script>
+	<script src="js/indexmain.js"></script>
+
+
+	<!--Google Chart-->
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<!--Shortcut and some feature-->
+	<script>
+		$('#shortcut').click(function () {
+			$('#detail').trigger('click');
+		});
+		$('#productlink').click(function () {
+			window.open('product.html');
+		});
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	</script>
+
+	<!--Service worker-->
+	<script>
+		// Register Service Worker
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function () {
+				navigator.serviceWorker.register('service-worker.js')
+					.then(reg => {
+						console.log('Service worker registered!', reg);
+					})
+					.catch(err => {
+						console.log('Service worker registration failed: ', err);
+					});
+			});
+		}
+
+	</script>
+
+	<!--Flipping cart animation-->
+	<script>
+		//select the card
+		var card = document.querySelectorAll('.card1');
+		card.forEach(function (e1) {
+			// handle the event if clicked
+			e1.addEventListener('click', function (event) {
+				e1.classList.toggle('is-flipped');
+			});
+		});
+	</script>
+
+	<!--Google Chart-->
+	<script>
+		// Load the Visualization API and the corechart package.
+		google.charts.load('current', { 'packages': ['corechart'] });
+
+		// Set a callback to run when the Google Visualization API is loaded.
+		google.charts.setOnLoadCallback(drawChart);
+
+		// Callback that creates and populates a data table
+		function drawChart() {
+
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Date');
+			data.addColumn('number', 'Number Visited');
+			var content = [];
+			// The default content
+			// If there are no existing data in the local storage
+			// The default is dynamic based on the view page date
+			if (localStorage.getItem("count") == null) {
+				// Two day before the current date
+				var day = new Date();
+				day.setDate(day.getDate() - 2);
+				aday = day.getDate() + '/' + (day.getMonth() + 1) + '/' + day.getFullYear();
+				const def = {
+					date: aday,
+					count: 10,
+				};
+
+				// One day before
+				var day = new Date();
+				day.setDate(day.getDate() - 1);
+				aday2 = day.getDate() + '/' + (day.getMonth() + 1) + '/' + day.getFullYear();
+				const def2 = {
+					date: aday2,
+					count: 25,
+				};
+
+				// Today, will set to one
+				var day = new Date();
+				aday3 = day.getDate() + '/' + (day.getMonth() + 1) + '/' + day.getFullYear();
+				const def3 = {
+					date: aday3,
+					count: 1,
+				};
+				localStorage.setItem("count", JSON.stringify([def, def2, def3]))
+
+			}
+			// if have existing data on this page, will continue here, else proceed above first
+
+			// setting the content
+			// get the count of loading index pages in each day
+			// and append to each rows
+			var visit = JSON.parse(localStorage.getItem("count"));
+			for (var i = 0; i < visit.length; i++) {
+				content.push([visit[i].date, parseInt(visit[i].count)]);
+			}
+			data.addRows(content);
+
+			// Set chart options
+			var options = {
+				animation: {
+					startup: true,
+					duration: 1000,
+					easing: 'in'
+				},
+
+				backgroundColor: { fill: 'transparent' },
+				legend: { position: 'bottom', alignment: 'start' },
+			}
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+
+		$(document).ready(function () {
+			// adding in local storage
+			// every reload add "1" in the count of that day
+			var str = JSON.parse(localStorage.getItem("count"));
+			if (str != null) {
+				var day = new Date();
+				aday3 = day.getDate() + '/' + (day.getMonth() + 1) + '/' + day.getFullYear();
+				var i = 0;
+				for (i = 0; i < str.length; i++) {
+					if (aday3 == str[i].date) {
+						str[i].count++;
+						break;
+					}
+				}
+				if (i == str.length) {
+					const def3 = {
+						date: aday3,
+						count: 1,
+					};
+					str.push(def3);
+				}
+				localStorage.setItem("count", JSON.stringify(str));
+			}
+
+		});
+
+		//If user resize the window, plot the chart again, made it responsive
+		$(window).resize(function () {
+			drawChart();
+		});
+
+		// Reset the shown graph
+		// So in the next first time display the graph, it will be "2"
+		$('#reset').click(function () {
+			// remove the item in local storage
+			localStorage.removeItem("count");
+			day = new Date();
+			day = day.getDate() + '/' + (day.getMonth() + 1) + '/' + day.getFullYear();
+			visit = {
+				date: day,
+				count: 1,
+			};
+			localStorage.setItem("count", JSON.stringify([visit]));
+			location.reload();
+		});
+
+		//Make default content
+		$('#default').click(function () {
+			localStorage.removeItem("count");
+			location.reload();
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Contact Jumpmaster</title>
+
+	<link rel="manifest" href="manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Jumpmaster Stall">
+	<meta name="apple-mobile-web-app-title" content="Jumpmaster Stall">
+	<meta name="theme-color" content="#FF9800">
+	<meta name="msapplication-navbutton-color" content="#FF9800">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+	<!-- ** Plugins Needed for the Project ** -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+	<link rel="stylesheet" href="plugins/aos/aos.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+	<link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+	<link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+	<link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+	<link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+	<link rel="stylesheet" href="plugins/devices.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+	<style>
+		.iframe-container {
+			position: relative;
+			width: 100%;
+			padding-bottom: 56.25%;
+			height: 0;
+		}
+
+		.iframe-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.gmap_canvas {
+			position: relative;
+			width: 100%;
+			padding-bottom: 56.25%;
+			height: 0;
+		}
+
+		.gmap_canvas iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.btn3d {
+			transition: all .08s linear;
+			position: relative;
+			outline: medium none;
+			border: 0px;
+			margin-right: 10px;
+			margin-top: 15px;
+		}
+
+		.btn3d:focus {
+			outline: medium none;
+		}
+
+		.btn3d:active {
+			top: 9px;
+		}
+
+		.btn-send {
+			box-shadow: 0 0 0 1px #428bca inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #357ebd, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+			background-color: #428bca;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="images/preloader.gif" alt="preloader" class="img-fluid">
+	</div>
+	<!-- Header Start -->
+	<!-- Nav Bar-->
+	<header class="navigation fixed-top">
+
+		<nav id="navbar" class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100 "
+			style="background: url('./images/bg/bg-2.jpg') 10% 10% no-repeat;position: fixed;top: 0;width: 100%;transition: top 0.3s;z-index: -99;">
+			<div class="container">
+				<a id="logo" class="navbar-brand" style="float:inline-start;z-index: 100;height:auto;"
+					href="index.html">
+					<img src="images/logo.png" alt="" class="img-fluid">
+				</a>
+
+				<button class="navbar-toggler collapsed ml-auto float-xs-right" type="button" data-toggle="collapse"
+					data-target="#navigation" aria-controls="navigation" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class=" fa fa-bars"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navigation">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Info</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="about.html">About Us </a></li>
+								<li><a class="dropdown-item" href="contact.html">Contact us</a></li>
+							</ul>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="weather.html">Weather</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="past-order.html">Past Orders</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="product.html">Product</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="cart.html">Cart</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Reservation</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="shipping.html">Shipping</a></li>
+								<li><a class="dropdown-item" href="payment.html">Payment</a></li>
+								<li><a class="dropdown-item" href="confirmation.html">Confirmation</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li><button id="detail" type="button" class="btn btn-warning" data-toggle="modal"
+								data-target="#myModal">
+								My detail
+							</button></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- The User detail -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Hi customer</h4>
+
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+				</div>
+				<div id="alert">
+
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<h2 id="indicate">Mode</h2>
+					<div class="form-group">
+						<label class="control-label">Name:</label>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<div class="dropdown">
+									<button id="select_button" class="btn btn-secondary dropdown-toggle" type="button">
+										Select:
+									</button>
+									<div id="name_select" class="dropdown-menu">
+
+									</div>
+								</div>
+							</div>
+							<input id="name" type="text" class="form-control">
+						</div>
+					</div>
+					<div id="valid">
+						<div class="form-group">
+							<label class="control-label">Address:</label>
+							<div class="input-group">
+								<input id="address" type="text" class="form-control">
+								<div class="input-group-append">
+									<button id="location" class="btn btn-dark">From map</button>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Email:</label>
+							<input id="email" type="text" class="form-control">
+						</div>
+						<button id="clearsession" type="button" class="btn btn-warning">Clear my session
+						</button>
+						<button id="selectsession" type="button" class="btn btn-success">Select session
+						</button>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+
+					<button id="add" type="button" class="btn btn-primary">Add
+					</button>
+					<button id="edit" type="button" class="btn btn-secondary">Edit
+					</button>
+					<button id="remove" type="button" class="btn btn-danger">Remove
+					</button>
+					<button id="back" type="button" class="btn btn-danger">Back
+					</button>
+					<button id="save" type="button" class="btn btn-success">Done
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- Header Close -->
+	<section class="section-header bg-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="text-md-left">
+						<h1 class="text-capitalize mb-4 font-lg text-white">Contact us</h1>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="iframe-container">
+					<iframe src="https://www.youtube.com/embed/kgejFBF3_lM?autoplay=1&loop=1&theme=light" width="560"
+						height="315" frameborder="0"></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section style="padding: 100px 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mb-5">
+					<ul class="list-inline select-option border-bottom pb-4">
+						<li class="list-inline-item mr-5 mb-4 mb-lg-0">
+							<a href="contactus.html" class="text-black "><span
+									class="font-extra bg-primary font-md text-white  p-2 mr-3">*</span>Contact or
+								Feedback</a>
+						</li>
+						<li class="list-inline-item mr-5 mb-4 mb-lg-0">
+							<a href="feedbackSta.html" class="text-black font-weight-bold"><span
+									class="font-extra font-md border p-2 mr-3">*</span>Feedback Statistic</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row  justify-content-center mb-5">
+				<div class="col-lg-8 text-md-left">
+					<span class="text-primary font-extra font-md">Jumpmaster</span>
+					<div class="mt-3 mb-4">
+						<h3>
+							<a href="" class="typewrite" data-period="2000"
+								data-type='[ "2188, Jalan Timah, Bandar Baru"]'>
+								<span class="wrap"></span>
+							</a>
+							<br>
+							<a href="" class="typewrite" data-period="2000" data-type='[ "31900 Kampar, Negeri Perak"]'>
+								<span class="wrap"></span>
+							</a>
+						</h3>
+					</div>
+					<div class="col-lg-12 col-md-6 text-left">
+						<span class="text-primary font-md font-extra">We are here</span>
+						<div class="gmap_canvas"><iframe width="700" height="400" 
+								src="https://maps.google.com/maps?q=Grand%20kampar%20Hotel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+								frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+								href="https://www.whatismyip-address.com"></a></div>
+					</div>
+					<div class="mt-3 mb-4">
+						tel: +60 11-3810 0852</div>
+					<div class="mt-3 mb-4">Email: <a href="mailto:jumpmasterweb@gmail.com">jumpmasterweb@gmail.com</a>
+					</div>
+					<div class="h3">
+						<a href="" class="typewrite" data-period="2000" data-type='[ "Need more information on our products?","Kindly fill up the following Enquiry form.",
+								 "Representative from our company will reply you shortly."]'>
+							<span class="wrap"></span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 mx-auto">
+					<div class="text-center p-5 shadow rounded">
+						<form id="my-form" action="https://formspree.io/xnqgkzlp" method="POST">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="form_email">Email:</label>
+										<input type="email" name="email" class="form-control" id="form_email"
+											placeholder="Please enter your email *" required="required"
+											data-error="Valid email is required." />
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="form_need">Please specify your need:</label>
+										<select id="form_need" name="_subject" class="form-control" required="required"
+											data-error="Please specify your need.">
+											<option value="" selected disabled>Please specify your need.</option>
+											<option value="Feedback on product">Feedback on product</option>
+											<option value="Feedback on service">Feedback on service</option>
+											<option value="Other enquires">Other enquires</option>
+										</select>
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="form_rate">Rating:</label>
+										<select id="form_rate" name="_subject" class="form-control" required="required"
+											data-error="Rating">
+											<option value="" selected disabled>Rating</option>
+											<option value="good">Good</option>
+											<option value="medium">Medium</option>
+											<option value="bad">Bad</option>
+										</select>
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="form_message">Please write your message here *</label>
+									<label for="form_message">Message *</label>
+									<textarea id="form_message" name="message" class="form-control"
+										placeholder="Message for me *" rows="4" required="required"
+										data-error="Please, leave us a message."></textarea>
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<button class="btn btn-send btn-lg btn3d">Submit</button>
+							<br>
+							<p id="my-form-status"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--Footer start -->
+<footer class="section footer">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">About</h4>
+					<p>JumpMasters hopes to bring you the better best of Malaysia's cusines. Indulge in your
+						favourite delights delivered to your doorstep steaming hot! We offer the best prices for
+						Malaysia's best night market foods.</p>
+
+					<ul class="list-inline footer-socials mt-4">
+						<li class="list-inline-item"><a href="https://www.facebook.com"><i
+									class="ti-facebook mr-2"></i></a></li>
+						<li class="list-inline-item"><a href="https://wa.link/ybfh21"><i
+									class="ti-themify-favicon-alt mr-2"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">Contact Info</h4>
+
+					<ul class="list-unstyled mb-0 footer-contact">
+						<li><i class="ti-mobile"></i><a class="text-light" href="https://wa.link/ybfh21">+60 11-3810
+								0852</a></li>
+						<li><i class="ti-email"></i><a class="text-light"
+								href="mailto:jumpmasterweb@gmail.com">jumpmasterweb@gmail.com</a></li>
+						<li class="text-light"><i class="ti-map"></i>Kampar, Perak Malaysia</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+				<div class="widget">
+					<h4 class="mb-3">Opening Hours</h4>
+					<div class="info mb-4">
+						<p class="mb-0">Monday - Sunday</p>
+						<h5>05:00 PM - 11:00 PM</h5>
+					</div>
+					<div class="info">
+						<p class="mb-0">Physical Stall, Every Wednesday</p>
+						<h5>05:00 PM - 11:00 PM</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Google Map Integration -->
+			<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+				<span class="text-primary font-md font-extra">Location</span>
+				<div class="gmap_canvas"><iframe width="372" height="406" id="gmap_canvas"
+						src="https://maps.google.com/maps?q=Grand%20kampar%20Hotel&t=k&z=15&ie=UTF8&iwloc=&output=embed"
+						frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+						href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a></div>
+			</div>
+			<!-- Google Map Integration End-->
+
+			<div class="col-lg-8 col-md-9 mb-5 mb-lg-0">
+				<div class="col-lg-12 text-center">
+					<br><br>
+					<span class="text-primary font-md font-extra">Get news from Jumpmaster!</span>
+					<h4 class="mb-3" style="color:white;">Fill me</h4>
+					<div class="form-group">
+						<input id="sendemail" type="email" class="form-control" placeholder="Enter Email" required>
+						<button id="emailsubmit" class="btn btn-dark">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+<section class="footer-btm py-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
+					<p class="mb-0 ">Copyright &copy; 2020 by <a href="index.html" class="text-white">Jumpmaster
+							Night Market</a></p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Footer  End -->
+	<!-- jQuery -->
+	<script src="plugins/jQuery/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="plugins/aos/aos.js"></script>
+	<script src="plugins/shuffle/shuffle.min.js"></script>
+	<script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="plugins/date-picker/datepicker.min.js"></script>
+	<script src="plugins/clock-picker/clockpicker.min.js"></script>
+	<script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+	<script src="plugins/swiper/swiper.min.js"></script>
+	<script src="plugins/instafeed/instafeed.min.js"></script>
+	<script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+
+	<!-- Google Map -->
+	<script src="plugins/google-map/gmap.js"></script>
+	<!-- Main Script -->
+	<script src="js/contact.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/weatherapi.js"></script>
+	<script src="js/user.js"></script>
+	<script>
+		function getLocalData(name) {
+			return localStorage.getItem(name)
+		}
+
+		function setLocalData(name, value) {
+			if (value != null)
+				localStorage.setItem(name, value);
+			else
+				localStorage.removeItem(name);
+		}
+		var feedback, need, rate;
+		$(document).ready(function () {
+			if (typeof (Storage) !== "undefined") {
+				if (localStorage.getItem("Feedback") == null) {
+					$.ajax({
+						url: "https://demo5030505.mockable.io/feedback",
+						dataType: "text",
+						type: "GET",
+						contentType: "application/json",
+						success: function (data) {
+							localStorage.setItem("Feedback", JSON.stringify(JSON.parse(data)));
+							feedback = JSON.parse(data);
+							console.log(data);
+						},
+						error: function (XMLHttpRequest, textStatus, errorThrown) {
+							console.log(textStatus);
+							feedback = [];
+						}
+					});
+				} else {
+					feedback = JSON.parse(localStorage.getItem("Feedback"));
+				}
+			}
+			$("select#form_need").change(function () {
+				need = $(this).children("option:selected").val();
+			});
+			$("select#form_rate").change(function () {
+				rate = $(this).children("option:selected").val();
+			});
+		});
+
+		window.addEventListener("DOMContentLoaded", function () {
+
+			// get the form elements defined in your form HTML above
+
+			var form = document.getElementById("my-form");
+			var button = document.getElementById("my-form-button");
+			var status = document.getElementById("my-form-status");
+
+			// Success and Error functions for after the form is submitted
+
+			function success() {
+				form.reset();
+				status.innerHTML = "Thank You!<br>You message was submitted successfully!";
+			}
+
+			function error() {
+				status.innerHTML = "Oops! There was a problem.";
+			}
+
+			// handle the form submission event
+
+			form.addEventListener("submit", function (ev) {
+				ev.preventDefault();
+				var data = new FormData(form);
+				ajax(form.method, form.action, data, success, error);
+			});
+		});
+
+		// helper function for sending an AJAX request
+
+		function ajax(method, url, data, success, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open(method, url);
+			xhr.setRequestHeader("Accept", "application/json");
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState !== XMLHttpRequest.DONE) return;
+				if (xhr.status === 200) {
+					success(xhr.response, xhr.responseType);
+					var arrobj = new Object();
+					arrobj['type'] = need;
+					arrobj['rate'] = rate;
+					feedback.push(arrobj);
+					localStorage.setItem("Feedback", JSON.stringify(feedback));
+				} else {
+					error(xhr.status, xhr.response, xhr.responseType);
+				}
+			};
+			xhr.send(data);
+		}
+		var TxtType = function (el, toRotate, period) {
+			this.toRotate = toRotate;
+			this.el = el;
+			this.loopNum = 0;
+			this.period = parseInt(period, 10) || 2000;
+			this.txt = '';
+			this.tick();
+			this.isDeleting = false;
+		};
+
+		TxtType.prototype.tick = function () {
+			var i = this.loopNum % this.toRotate.length;
+			var fullTxt = this.toRotate[i];
+
+			if (this.isDeleting) {
+				this.txt = fullTxt.substring(0, this.txt.length - 1);
+			} else {
+				this.txt = fullTxt.substring(0, this.txt.length + 1);
+			}
+
+			this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+			var that = this;
+			var delta = 200 - Math.random() * 100;
+
+			if (this.isDeleting) { delta /= 2; }
+
+			if (!this.isDeleting && this.txt === fullTxt) {
+				delta = this.period;
+				this.isDeleting = true;
+			} else if (this.isDeleting && this.txt === '') {
+				this.isDeleting = false;
+				this.loopNum++;
+				delta = 500;
+			}
+
+			setTimeout(function () {
+				that.tick();
+			}, delta);
+		};
+
+		window.onload = function () {
+			var elements = document.getElementsByClassName('typewrite');
+			for (var i = 0; i < elements.length; i++) {
+				var toRotate = elements[i].getAttribute('data-type'); var
+					period = elements[i].getAttribute('data-period'); if (toRotate) {
+						new TxtType(elements[i], JSON.parse(toRotate),
+							period);
+					}
+			} // INJECT CSS var css=document.createElement("style"); css.type="text/css" ;
+			css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}"; document.body.appendChild(css);
+		};
+	</script>
+</body>
+
+</html>
